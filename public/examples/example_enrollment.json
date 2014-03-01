@@ -1,3 +1,4 @@
+// Enrollment to an event without any quota groups
 {
   "enrollment": {
     "id": 10,
@@ -37,6 +38,28 @@
         "id": 14,
         "question_id": 7, // question has type: text/long
         "value": "I am really looking forward to your party!\nI can't wait!!\n\nxoxoxo"
+      }
+    ]
+  }
+}
+
+
+// Enrollment to an event with a quota group
+{
+  "enrollment": {
+    "id": 20,
+    "event_id": 10,
+    "quota_group_id": 125,
+    "answers": [
+      {
+        "id": 50,
+        "question_id": 20, // question has type: text/name
+        "value": "Jane Smith"
+      },
+      {
+        "id": 51,
+        "question_id": 21, // question has type: text/email
+        "value": "jane.smith@example.com"
       }
     ]
   }

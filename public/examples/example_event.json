@@ -1,3 +1,4 @@
+// Example event wihout any quotas
 {
   "event": {
     "id": 1,
@@ -15,6 +16,112 @@
       },
       "end": {
         "date": "2014-02-25",
+        "time": "23:59+0300"
+      }
+    }
+  }
+}
+
+// Example event with a simple maximum registration count of 200 enrollments
+{
+  "event": {
+    "id": 5,
+    "name": "Party hard!",
+    "description": "We're gonna **party** like no tomorrow!",
+    "image": "http://www.example.com/dolan.jpg", // Optional
+    "quota": {
+      "common_quota_value": 200
+    },
+    "event_date": {
+      "date": "2014-05-20"
+    },
+    "registration": {
+      "begin": {
+        "date": "2014-05-01",
+        "time": "12:00+0300"
+      },
+      "end": {
+        "date": "2014-05-19",
+        "time": "23:59+0300"
+      }
+    }
+  }
+}
+
+// Example event with three quota groups
+{
+  "event": {
+    "id": 10,
+    "name": "Party even harder!",
+    "description": "We're gonna _coma_ like no yesterday!",
+    "quota": {
+      "quota_groups": [
+        {
+          "id": 123,
+          "name": "Athene",
+          "value": 20
+        },
+        {
+          "id": 124,
+          "name": "Media",
+          "value": 40
+        },
+        {
+          "id": 125,
+          "name": "Lurkers",
+          "value": 10
+        }
+      ]
+    },
+    "event_date": {
+      "date": "2014-05-20"
+    },
+    "registration": {
+      "begin": {
+        "date": "2014-05-01",
+        "time": "12:00+0300"
+      },
+      "end": {
+        "date": "2014-05-19",
+        "time": "23:59+0300"
+      }
+    }
+  }
+}
+
+
+// Example event with two quota groups and a common group. An enrollment will
+// be grouped to the common group, if it's own quota group is already full.
+{
+  "event": {
+    "id": 10,
+    "name": "Party even harder!",
+    "description": "Just\nA\nTest!",
+    "quota": {
+      "common_quota_value": 20,
+      "quota_groups": [
+        {
+          "id": 123,
+          "name": "Athene",
+          "value": 40
+        },
+        {
+          "id": 125,
+          "name": "Prodeko",
+          "value": 40
+        }
+      ]
+    },
+    "event_date": {
+      "date": "2014-05-20"
+    },
+    "registration": {
+      "begin": {
+        "date": "2014-05-01",
+        "time": "12:00+0300"
+      },
+      "end": {
+        "date": "2014-05-19",
         "time": "23:59+0300"
       }
     }
