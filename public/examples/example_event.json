@@ -1,0 +1,22 @@
+{
+  "event": {
+    "id": 1,
+    "name": "Sukulaissitsit",
+    "description": "Tervetuloa sukulaissitseille! ...",
+    "image": "http://www.example.com/lolwut.jpg", // Optional
+    "event_date": {
+      "date": "2014-02-28",
+      "time": "17:00+0300" // Optional
+    },
+    "registration": {
+      "begin": {
+        "date": "2014-02-20",
+        "time": "12:00+0300"
+      },
+      "end": {
+        "date": "2014-02-25",
+        "time": "23:59+0300"
+      }
+    }
+  }
+}
