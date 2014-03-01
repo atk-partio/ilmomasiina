@@ -19,17 +19,13 @@ end
 
 group :development do
   # faster webserver than the default webrick
-  gem 'thin', '~> 1.5'
+  gem 'thin', '~> 1.6'
 
   # warns about ineffective database queries
   gem 'bullet', '~> 4.8'
 
   # supresses asset output in server console
   gem 'quiet_assets', '~> 1.0'
-
-  # catches all mail sent by rails and serves it on localhost:1080
-  # run 'mailcatcher' in terminal to start
-  gem 'mailcatcher', '~> 0.2'
 
   # gem for security testing
   # usage: run `brakeman` in root directory
