@@ -5,21 +5,43 @@ gem 'rails', '4.0.3'
 
 gem 'rails-api'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development, :test do
+  # SQLite database for development and testing
+  gem 'sqlite3', '~> 1.3'
 
+  # Preloading of Rails environments, doesn't work on Windows
+  gem 'zeus', '~> 0.13', platforms: 'ruby'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+  # jazz_hands is an opinionated set of console-related gems and a bit of glue
+  # Includes pry, addons to it
+  gem 'jazz_hands', '~> 0.5'
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :development do
+  # faster webserver than the default webrick
+  gem 'thin', '~> 1.5'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+  # warns about ineffective database queries
+  gem 'bullet', '~> 4.8'
 
-# Deploy with Capistrano
-# gem 'capistrano', :group => :development
+  # supresses asset output in server console
+  gem 'quiet_assets', '~> 1.0'
 
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+  # catches all mail sent by rails and serves it on localhost:1080
+  # run 'mailcatcher' in terminal to start
+  gem 'mailcatcher', '~> 0.2'
+
+  # gem for security testing
+  # usage: run `brakeman` in root directory
+  gem 'brakeman', '~> 2.4', require: false
+
+  # Improved errors, used to display own page when an error happens
+  gem 'better_errors', '~> 1.1'
+
+  # use REPL in error pages! Whoa!
+  gem 'binding_of_caller', '~> 0.7'
+
+  # for debugging requests with rails_panel chrome extension, we need this
+  # This needs to come after better_errors to be able to track failing pages as well
+  gem 'meta_request', '~> 0.2'
+end
