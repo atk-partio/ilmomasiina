@@ -6,4 +6,5 @@ cache: bundler
 script: bundle exec ruby -r 'minitest/autorun' test/*.rb
 
 notifications:
-  flowdock: 83eac5166a0ad721bed3e0dbac06e406
+  flowdock:
+    secure: "U+2YE+aQNFXeD3Ff4indCT6fGRpkYITgXfXRRL/SeBQwMggZDl4SCiVJ9MMiMsXkbv1z8dhpZNAfGvM0473SOZel3gVEczMi/UVOYyLJnC+fElvm9cTnnYwsJ6hf+Fn76dyvac7J6lSb0cq50VlFhsyWfyy+/H0eF93+FVKsUv4="
