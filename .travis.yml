@@ -2,4 +2,5 @@ language: ruby
 rvm:
   - 2.1.0
   - jruby
+cache: bundler
 script: bundle exec ruby -r 'minitest/autorun' test/*.rb
