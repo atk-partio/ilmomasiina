@@ -1,4 +1,4 @@
-require_relative '../ilmomasiina'
+require_relative '../app/ilmomasiina'
 require 'rack/test'
 
 class IlmomasiinaTest < MiniTest::Test
