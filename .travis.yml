@@ -4,3 +4,6 @@ rvm:
   - jruby
 cache: bundler
 script: bundle exec ruby -r 'minitest/autorun' test/*.rb
+
+notifications:
+  flowdock: 83eac5166a0ad721bed3e0dbac06e406
