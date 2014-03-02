@@ -1,7 +1,7 @@
 require_relative '../ilmomasiina'
 require 'rack/test'
 
-class IlmomasiinaTest < MiniTest::Unit::TestCase
+class IlmomasiinaTest < MiniTest::Test
   include Rack::Test::Methods
 
   def app
