@@ -1,0 +1,5 @@
+language: ruby
+rvm:
+  - 2.1.0
+  - jruby
+script: bundle exec ruby -r 'minitest/autorun' test/*.rb
