@@ -1,5 +1,4 @@
-require_relative '../app/ilmomasiina'
-require 'rack/test'
+require_relative 'test_helper'
 
 class IlmomasiinaTest < MiniTest::Test
   include Rack::Test::Methods
