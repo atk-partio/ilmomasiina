@@ -1,6 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ansi (1.4.3)
+    builder (3.2.2)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     celluloid-io (0.15.0)
@@ -18,6 +20,7 @@ GEM
     guard-minitest (2.2.0)
       guard (~> 2.0)
       minitest (>= 3.0)
+    hashie (2.0.5)
     listen (2.6.2)
       celluloid (>= 0.15.2)
       celluloid-io (>= 0.15.0)
@@ -26,7 +29,15 @@ GEM
     lumberjack (1.0.4)
     method_source (0.8.2)
     minitest (5.3.0)
+    minitest-reporters (1.0.2)
+      ansi
+      builder
+      minitest (>= 5.0)
+      powerbar
     nio4r (1.0.0)
+    powerbar (1.0.11)
+      ansi (~> 1.4.0)
+      hashie (>= 1.1.0)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -54,5 +65,7 @@ PLATFORMS
 DEPENDENCIES
   guard
   guard-minitest
+  minitest
+  minitest-reporters
   rack-test
   sinatra (= 1.4.4)

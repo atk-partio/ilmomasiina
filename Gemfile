@@ -9,4 +9,9 @@ group :development do
   gem 'guard'
   # Run tests when files change
   gem 'guard-minitest'
+
+  # Be explicit about requiring minitest
+  gem 'minitest'
+  # We want nice output from minitest as well
+  gem 'minitest-reporters'
 end
