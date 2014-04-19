@@ -20,5 +20,9 @@ FactoryGirl.define do
       paragraph_count = rand(5) + 2
       Faker::Lorem.paragraphs(paragraph_count).join("\n\n")
     end
+
+    trait :invalid do
+      name { nil }
+    end
   end
 end
