@@ -26,7 +26,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.2'
 
   # Preloading of Rails environments, doesn't work on Windows
-  gem 'zeus', '~> 0.13', platforms: 'ruby'
+  gem 'zeus', '~> 0.13', platforms: 'ruby', group: :skip_ci
 
   # jazz_hands is an opinionated set of console-related gems and a bit of glue
   # Includes pry, addons to it
@@ -37,14 +37,16 @@ group :development, :test do
 end
 
 group :development do
-  # faster webserver than the default webrick
-  gem 'thin', '~> 1.6'
-
   # warns about ineffective database queries
   gem 'bullet', '~> 4.8'
 
   # supresses asset output in server console
   gem 'quiet_assets', '~> 1.0'
+end
+
+group :development, :skip_ci do
+  # faster webserver than the default webrick
+  gem 'thin', '~> 1.6'
 
   # gem for security testing
   # usage: run `brakeman` in root directory
@@ -53,8 +55,8 @@ group :development do
   # Improved errors, used to display own page when an error happens
   gem 'better_errors', '~> 1.1'
 
-  # use REPL in error pages! Whoa! But doesn't work on jruby.
-  gem 'binding_of_caller', '~> 0.7', platforms: :mri
+  # use REPL in error pages! Whoa!
+  gem 'binding_of_caller', '~> 0.7'
 
   # for debugging requests with rails_panel chrome extension, we need this
   # This needs to come after better_errors to be able to track failing pages as well
