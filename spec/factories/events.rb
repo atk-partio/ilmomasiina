@@ -7,6 +7,7 @@
 #  updated_at  :datetime
 #  name        :string(255)
 #  description :text
+#  image       :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
@@ -19,6 +20,10 @@ FactoryGirl.define do
     description do
       paragraph_count = rand(5) + 2
       Faker::Lorem.paragraphs(paragraph_count).join("\n\n")
+    end
+
+    trait :with_image do
+      image { Faker::Internet.url + '.jpg' }
     end
 
     trait :invalid do

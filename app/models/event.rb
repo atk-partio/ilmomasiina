@@ -7,6 +7,7 @@
 #  updated_at  :datetime
 #  name        :string(255)
 #  description :text
+#  image       :string(255)
 #
 
 class Event < ActiveRecord::Base
