@@ -2,10 +2,14 @@
 #
 # Table name: events
 #
-#  id         :integer          not null, primary key
-#  created_at :datetime
-#  updated_at :datetime
+#  id          :integer          not null, primary key
+#  created_at  :datetime
+#  updated_at  :datetime
+#  name        :string(255)
+#  description :text
 #
 
 class Event < ActiveRecord::Base
+  validates_presence_of :name
+  validates_presence_of :description
 end
