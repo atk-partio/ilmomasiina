@@ -3,7 +3,7 @@ rvm:
   - 2.1.0
   - jruby
 cache: bundler
-bundler_args: --without=skip_ci
+bundler_args: --deployment --without=skip_ci
 script: bundle exec rspec
 
 notifications:
