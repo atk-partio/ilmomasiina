@@ -3,7 +3,9 @@ rvm:
   - 2.1.0
 cache: bundler
 bundler_args: --deployment
-script: bundle exec rspec
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rspec
 
 notifications:
   flowdock:
