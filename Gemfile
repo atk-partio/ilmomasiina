@@ -31,9 +31,6 @@ group :development, :test do
   # jazz_hands is an opinionated set of console-related gems and a bit of glue
   # Includes pry, addons to it
   gem 'jazz_hands', '~> 0.5'
-
-  # Support for coveralls.io
-  gem 'coveralls', require: false
 end
 
 group :development do
@@ -59,6 +56,14 @@ group :development do
   # for debugging requests with rails_panel chrome extension, we need this
   # This needs to come after better_errors to be able to track failing pages as well
   gem 'meta_request', '~> 0.2'
+end
+
+group :test do
+  # Support for coveralls.io
+  gem 'coveralls', require: false
+
+  # generate placeholders for factories
+  gem 'faker'
 end
 
 # Extended structure for seed files
