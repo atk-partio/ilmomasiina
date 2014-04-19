@@ -63,13 +63,4 @@ RSpec.configure do |config|
   # Email matchers
   # config.include EmailSpec::Helpers
   # config.include EmailSpec::Matchers
-
-  # Slow down GC
-  # http://makandracards.com/makandra/950-speed-up-rspec-by-deferring-garbage-collection
-  config.before(:all) do
-    DeferredGarbageCollection.start
-  end
-  config.after(:all) do
-    DeferredGarbageCollection.reconsider
-  end
 end
