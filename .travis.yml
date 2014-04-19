@@ -1,9 +1,8 @@
 language: ruby
 rvm:
   - 2.1.0
-  - jruby
 cache: bundler
-bundler_args: --deployment --without skip_ci
+bundler_args: --deployment
 script: bundle exec rspec
 
 notifications:
