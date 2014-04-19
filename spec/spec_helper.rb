@@ -44,17 +44,17 @@ RSpec.configure do |config|
   config.order = "random"
 
   # Use Capybara
-  config.include Capybara::DSL
+  # config.include Capybara::DSL
 
   # Set Capybara to use poltergeist for javascript scenarios
-  require 'capybara/poltergeist'
-  Capybara.javascript_driver = :poltergeist
+  # require 'capybara/poltergeist'
+  # Capybara.javascript_driver = :poltergeist
 
   # Use FactoryGirl
   config.include FactoryGirl::Syntax::Methods
 
   # Set locale for Faker
-  Faker::Config.locale = :fi
+  # Faker::Config.locale = :fi
 
   # Matchers for Paperclip
   # require 'paperclip/matchers'
