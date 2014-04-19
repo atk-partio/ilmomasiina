@@ -16,4 +16,8 @@ guard :rspec, cmd: "zeus rspec" do
   watch(%r{^spec/support/(.+)\.rb$})                  { "spec" }
   watch('config/routes.rb')                           { "spec/routing" }
   watch('app/controllers/application_controller.rb')  { "spec/controllers" }
+
+  # Factories watchers
+  watch('spec/factories_spec.rb')      { "spec/factories_spec.rb" }
+  watch(%r{^spec/factories/(.+)\.rb$}) { "spec/factories_spec.rb" }
 end
