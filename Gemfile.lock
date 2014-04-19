@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/banister/binding_of_caller.git
+  revision: e9737006a0425f3921484a970a60c8e55f4f2d91
+  specs:
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -32,8 +39,6 @@ GEM
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
     brakeman (2.4.3)
       erubis (~> 2.6)
       fastercsv (~> 1.5)
@@ -269,7 +274,7 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors (~> 1.1)
-  binding_of_caller (~> 0.7)
+  binding_of_caller!
   brakeman (~> 2.4)
   bullet (~> 4.8)
   coveralls
