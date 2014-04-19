@@ -17,3 +17,6 @@
 
 # Sublime crud
 *.sublime-workspace
+
+# Ignore coverage files
+coverage/
