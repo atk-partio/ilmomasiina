@@ -31,6 +31,9 @@ group :development, :test do
   # jazz_hands is an opinionated set of console-related gems and a bit of glue
   # Includes pry, addons to it
   gem 'jazz_hands', '~> 0.5'
+
+  # Support for coveralls.io
+  gem 'coveralls', require: false
 end
 
 group :development do
