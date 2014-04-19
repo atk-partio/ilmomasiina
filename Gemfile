@@ -53,8 +53,8 @@ group :development do
   # Improved errors, used to display own page when an error happens
   gem 'better_errors', '~> 1.1'
 
-  # use REPL in error pages! Whoa!
-  gem 'binding_of_caller', '~> 0.7'
+  # use REPL in error pages! Whoa! But doesn't work on jruby.
+  gem 'binding_of_caller', '~> 0.7', platforms: 'ruby'
 
   # for debugging requests with rails_panel chrome extension, we need this
   # This needs to come after better_errors to be able to track failing pages as well
