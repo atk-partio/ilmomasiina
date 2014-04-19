@@ -44,7 +44,7 @@ group :development do
   gem 'quiet_assets', '~> 1.0'
 end
 
-group :development, :skip_ci do
+group :skip_ci do
   # faster webserver than the default webrick
   gem 'thin', '~> 1.6'
 
