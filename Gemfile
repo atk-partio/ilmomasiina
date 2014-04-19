@@ -60,3 +60,9 @@ group :development do
   # This needs to come after better_errors to be able to track failing pages as well
   gem 'meta_request', '~> 0.2'
 end
+
+# Extended structure for seed files
+gem 'seedbank', '~> 0.3.0'
+
+# More expressive seeding and, in particular, updating of existing seeds
+gem 'seed-fu', '~> 2.3.1'
