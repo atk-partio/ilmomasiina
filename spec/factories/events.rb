@@ -11,7 +11,14 @@
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
+require 'faker'
+
 FactoryGirl.define do
   factory :event do
+    name { Faker::Lorem.sentence }
+    description do
+      paragraph_count = rand(5) + 2
+      Faker::Lorem.paragraphs(paragraph_count).join("\n\n")
+    end
   end
 end
