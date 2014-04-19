@@ -56,7 +56,7 @@ GEM
       celluloid (>= 0.15.0)
       nio4r (>= 0.5.0)
     coderay (1.1.0)
-    columnize (0.3.6)
+    columnize (0.8.9)
     coolline (0.4.3)
     coveralls (0.7.0)
       multi_json (~> 1.3)
