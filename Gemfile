@@ -9,6 +9,22 @@ group :development, :test do
   # SQLite database for development and testing
   gem 'sqlite3', '~> 1.3'
 
+  gem 'guard'
+  gem 'guard-rspec', require: false
+
+  # RSpec tests
+  gem 'rspec-rails', '~> 2.99.0.beta2'
+
+  # Instafailing progress bar for RSpec
+  gem 'rspec', '~> 2.99.0.beta2' # Temporary fix during beta version
+  gem 'fuubar', '>= 1.3.0'
+
+  # One-liners to be used in specs to test common functionality easily
+  gem 'shoulda-matchers'
+
+  # Factory Girl helps you generate test data
+  gem 'factory_girl_rails', '~> 4.2'
+
   # Preloading of Rails environments, doesn't work on Windows
   gem 'zeus', '~> 0.13', platforms: 'ruby'
 
