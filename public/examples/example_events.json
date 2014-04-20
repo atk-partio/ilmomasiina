@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Sukulaissitsit",
       "image": "http://www.example.com/lolwut.jpg", // Optional
-      "event_date": {
+      "when": {
         "date": "2014-02-28",
         "time": "17:00+0300" // Optional
       },
@@ -23,7 +23,7 @@
       "id": 2,
       "name": "Sukulaissitsit take 2",
       "image": "http://www.example.com/lolwut.jpg", // Optional
-      "event_date": {
+      "when": {
         "date": "2015-02-28",
         "time": "17:00+0300" // Optional
       },
@@ -42,7 +42,7 @@
       "id": 3,
       "name": "Sukulaissitsit reloaded!",
       "image": "http://www.example.com/lolwut.jpg", // Optional
-      "event_date": {
+      "when": {
         "date": "2016-02-28",
         "time": "17:00+0300" // Optional
       },

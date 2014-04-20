@@ -5,7 +5,7 @@
     "name": "Sukulaissitsit",
     "description": "Tervetuloa sukulaissitseille! ...",
     "image": "http://www.example.com/lolwut.jpg", // Optional
-    "event_date": {
+    "when": {
       "date": "2014-02-28",
       "time": "17:00+0300" // Optional
     },
@@ -32,7 +32,7 @@
     "quota": {
       "common_quota_value": 200
     },
-    "event_date": {
+    "when": {
       "date": "2014-05-20"
     },
     "registration": {
@@ -73,7 +73,7 @@
         }
       ]
     },
-    "event_date": {
+    "when": {
       "date": "2014-05-20"
     },
     "registration": {
@@ -112,7 +112,7 @@
         }
       ]
     },
-    "event_date": {
+    "when": {
       "date": "2014-05-20"
     },
     "registration": {
