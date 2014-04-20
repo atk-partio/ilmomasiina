@@ -5,20 +5,9 @@
     "name": "Sukulaissitsit",
     "description": "Tervetuloa sukulaissitseille! ...",
     "image": "http://www.example.com/lolwut.jpg", // Optional
-    "when": {
-      "date": "2014-02-28",
-      "time": "17:00+0300" // Optional
-    },
-    "registration": {
-      "begin": {
-        "date": "2014-02-20",
-        "time": "12:00+0300"
-      },
-      "end": {
-        "date": "2014-02-25",
-        "time": "23:59+0300"
-      }
-    }
+    "date": "2014-02-28T17:00+0300", // Time part can be left out
+    "registration_begins_at": "2014-02-20T12:00+0300",
+    "registration_ends_at": "2014-02-25T23:59+0300"
   }
 }
 
@@ -32,19 +21,9 @@
     "quota": {
       "common_quota_value": 200
     },
-    "when": {
-      "date": "2014-05-20"
-    },
-    "registration": {
-      "begin": {
-        "date": "2014-05-01",
-        "time": "12:00+0300"
-      },
-      "end": {
-        "date": "2014-05-19",
-        "time": "23:59+0300"
-      }
-    }
+    "date": "2014-05-20", // Time part can be left out
+    "registration_begins_at": "2014-05-01T12:00+0300",
+    "registration_ends_at": "2014-05-19T23:59+0300"
   }
 }
 
@@ -73,19 +52,9 @@
         }
       ]
     },
-    "when": {
-      "date": "2014-05-20"
-    },
-    "registration": {
-      "begin": {
-        "date": "2014-05-01",
-        "time": "12:00+0300"
-      },
-      "end": {
-        "date": "2014-05-19",
-        "time": "23:59+0300"
-      }
-    }
+    "date": "2014-05-20", // Time part can be left out
+    "registration_begins_at": "2014-05-01T12:00+0300",
+    "registration_ends_at": "2014-05-19T23:59+0300"
   }
 }
 
@@ -112,18 +81,8 @@
         }
       ]
     },
-    "when": {
-      "date": "2014-05-20"
-    },
-    "registration": {
-      "begin": {
-        "date": "2014-05-01",
-        "time": "12:00+0300"
-      },
-      "end": {
-        "date": "2014-05-19",
-        "time": "23:59+0300"
-      }
-    }
+    "date": "2014-05-20", // Time part can be left out
+    "registration_begins_at": "2014-05-01T12:00+0300",
+    "registration_ends_at": "2014-05-19T23:59+0300"
   }
 }
