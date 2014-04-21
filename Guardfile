@@ -3,7 +3,7 @@
 #
 # More info at https://github.com/guard/guard#readme
 
-guard :rspec, cmd: "zeus rspec" do
+guard :rspec, cmd: "zeus rspec --tty --format doc" do
   # General watchers
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
