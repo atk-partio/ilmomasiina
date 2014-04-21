@@ -22,6 +22,9 @@ group :development, :test do
   # One-liners to be used in specs to test common functionality easily
   gem 'shoulda-matchers'
 
+  # Better matchers for JSON output
+  gem 'json_spec'
+
   # Factory Girl helps you generate test data
   gem 'factory_girl_rails', '~> 4.2'
 
