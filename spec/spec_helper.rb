@@ -56,6 +56,9 @@ RSpec.configure do |config|
   # Use FactoryGirl
   config.include FactoryGirl::Syntax::Methods
 
+  # Matchers for JSON
+  config.include JsonSpec::Helpers
+
   # Set locale for Faker
   # Faker::Config.locale = :fi
 
