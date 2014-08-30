@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.5'
 
 gem 'rails-api'
 
@@ -31,9 +31,17 @@ group :development, :test do
   # Preloading of Rails environments, doesn't work on Windows
   gem 'zeus', '~> 0.13', platforms: 'ruby'
 
-  # jazz_hands is an opinionated set of console-related gems and a bit of glue
-  # Includes pry, addons to it
-  gem 'jazz_hands', '~> 0.5'
+  # Rails console helpers
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-git'
+  gem 'pry-stack_explorer'
+  gem 'pry-remote'
+  gem 'pry-byebug' # For ruby 2.x
+  gem 'hirb'
+  gem 'coolline'
+  gem 'awesome_print'
 end
 
 group :development do
