@@ -24,3 +24,5 @@ coverage/
 # Ignore CTags tag files
 .tags
 .tags_sorted_by_file
+frontend/node_modules
+public
