@@ -26,3 +26,6 @@ coverage/
 .tags_sorted_by_file
 frontend/node_modules
 public
+
+# Ignore dotenv file, used to setup environment variables in development
+.env
