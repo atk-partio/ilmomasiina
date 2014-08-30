@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe EventsController, :type => :routing do
+describe Api::EventsController, :type => :routing do
   describe "routing" do
 
     it "routes to #index" do
-      expect(get: '/events').to route_to("events#index")
+      expect(get: '/api/events').to route_to("api/events#index")
     end
 
   end

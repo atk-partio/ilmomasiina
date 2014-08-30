@@ -54,5 +54,7 @@ Ilmomasiina::Application.routes.draw do
   #     resources :products
   #   end
 
-  get 'events' => 'events#index'
+  namespace :api do
+    resources :events, only: [:index]
+  end
 end
