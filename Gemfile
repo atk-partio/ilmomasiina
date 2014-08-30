@@ -5,18 +5,18 @@ gem 'rails', '4.1.5'
 
 gem 'rails-api'
 
-group :development, :test do
-  # SQLite database for development and testing
-  gem 'sqlite3', '~> 1.3'
+# Database
+gem 'pg'
 
+group :development, :test do
   gem 'guard'
   gem 'guard-rspec', require: false
 
   # RSpec tests
-  gem 'rspec-rails', '~> 2.99.0.beta2'
+  gem 'rspec-rails', '~> 3.0'
 
   # Instafailing progress bar for RSpec
-  gem 'rspec', '~> 2.99.0.beta2' # Temporary fix during beta version
+  gem 'rspec', '~> 3.0'
   gem 'fuubar', '>= 1.3.0'
 
   # One-liners to be used in specs to test common functionality easily
@@ -63,10 +63,6 @@ group :development do
 
   # use REPL in error pages! Whoa! Use bleeding edge to work on jruby
   gem 'binding_of_caller', github: 'banister/binding_of_caller'
-
-  # for debugging requests with rails_panel chrome extension, we need this
-  # This needs to come after better_errors to be able to track failing pages as well
-  gem 'meta_request', '~> 0.2'
 end
 
 group :test do
