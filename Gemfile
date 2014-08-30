@@ -59,7 +59,7 @@ group :development do
   gem 'brakeman', '~> 2.4', require: false
 
   # Improved errors, used to display own page when an error happens
-  gem 'better_errors', '~> 1.1'
+  gem 'better_errors', '~> 2.0'
 
   # use REPL in error pages! Whoa! Use bleeding edge to work on jruby
   gem 'binding_of_caller'
