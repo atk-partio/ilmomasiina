@@ -6,7 +6,7 @@ gem 'rails', '4.1.5'
 gem 'rails-api'
 
 # Database
-gem 'mysql'
+gem 'mysql2'
 
 group :development, :test do
   gem 'guard'

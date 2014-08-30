@@ -20,7 +20,7 @@ Development
 * Ruby 2.1.2
 * Bundler
 * JS runtime (e.g. node.js, therubyracer, JScript)
-* PostgreSQL
+* MySQL
 
 #### Installing dependencies on OS X
 
@@ -28,7 +28,7 @@ Programs to be installed:
 * Homebrew
 * Ruby 2.1.2
 * Bundler
-* PostgreSQL
+* MySQL
 
 First you must install Homebrew and then make sure your ruby version is correct.
 
@@ -44,9 +44,9 @@ Now `ruby -v` should output the correct version. If not, restart your terminal. 
 
     gem install bundler
     rbenv rehash
-    brew install postgresql
+    brew install mysql
 
-The PostgreSQL install command (`brew install postgresql`) will output you information on how to setup postgresql to launch on login. Follow the instructions on the screen.
+The MySQL install command (`brew install mysql`) will output you information on how to setup MySQL to launch on login. Follow the instructions on the screen.
 
 #### Installing requirements on Windows
 
