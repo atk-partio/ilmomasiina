@@ -29,7 +29,7 @@ describe EventsController, :type => :controller do
     it { is_expected.to respond_with :success }
 
     it "retrieves all events" do
-      expect(fake_event_model).to have_received(:all).with()
+      expect(fake_event_model).to have_received(:all).with(no_args)
     end
 
     it "has a correct json content type header" do
