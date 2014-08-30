@@ -1,5 +1,8 @@
-$ = require("jquery")
-main = require("./modules/main/main")
+$ = require('jquery')
+main = require('./modules/main/main')
+hbsHelpers = require('./modules/common/hbs-helpers') 
 
-$("document").ready ->
-  main $("body")
+hbsHelpers.init()
+
+$('document').ready ->
+  main.init $('body')
