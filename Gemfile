@@ -73,6 +73,11 @@ group :test do
   gem 'faker'
 end
 
+group :production do
+  # More robust web server for production usage
+  gem 'unicorn'
+end
+
 # Extended structure for seed files
 gem 'seedbank', '~> 0.3.0'
 
