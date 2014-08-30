@@ -3,5 +3,6 @@
 FactoryGirl.define do
   factory :question do
     name { Faker::Lorem.sentence(1).gsub(".", "?") }
+    event
   end
 end
