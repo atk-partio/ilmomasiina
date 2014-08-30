@@ -75,3 +75,12 @@ Instead of running `rake` and `rails` directly, you can use the zeus gem as foll
 [Zeus is a program to make your rails app boot under a second][zeus].
 
   [zeus]: https://github.com/burke/zeus
+
+
+Other services in use
+---------------------
+
+    gem install travis
+    gem install heroku
+    gem install git-up
+    git config --global git-up.rebase.auto false
