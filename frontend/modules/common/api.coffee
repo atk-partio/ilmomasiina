@@ -1,6 +1,6 @@
 _ = require "lodash"
-Bacon    = require 'baconjs'
-bjq      = require 'bacon.jquery'
+Bacon = require 'baconjs'
+bjq = require 'bacon.jquery'
 
 module.exports = do -> 
   rootPath = "api/"

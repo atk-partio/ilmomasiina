@@ -1,7 +1,17 @@
 template = require("./events.hbs")
 api = require("../common/api")
+alerts = require("../common/alerts")
 
-module.exports = ($element) ->
-  $element.html do template
-  stream = api.get "events" 
-  stream.onValue (value) -> console.log value
+module.exports = {
+  init: ($element) ->
+    eventsStream = api.get "events" 
+
+    eventsStream.onValue (events) -> 
+      $element.html(template({
+        openEvents: events
+      })) 
+
+    eventsStream.onError ->
+      alerts.error("Events loading failed")
+
+}

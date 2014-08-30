@@ -1,1 +1,22 @@
-<h2>Events</h2>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h2 class="panel-title">Avoimet ilmot</h2>
+  </div>
+<table class="table table-striped table-s hidden-xs">
+<thead>
+<tr>
+  <th>Ilmo</th>
+  <th style="width: 12em">Avautui</th>
+  <th style="width: 12em">Sulkeutuu</th>
+</tr>
+</thead>
+<tbody>
+  {{#each openEvents}}
+    <tr>
+      <td><a href="/event/{{id}}/">{{ name }}</a></td>
+      <td>{{ formatDate registration_begins_at }}</td>
+      <td>{{ formatDate registration_ends_at }}</td>
+    </tr>
+  {{/each}}
+</table>
+</table>
