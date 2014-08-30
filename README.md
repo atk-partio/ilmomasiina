@@ -35,18 +35,30 @@ First you must install Homebrew and then make sure your ruby version is correct.
     ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
     brew install rbenv
     brew install ruby-build
-    rbenv install 2.1.2
-    echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-    . ~/.bash_profile
-
-
-Now `ruby -v` should output the correct version. If not, restart your terminal. After the ruby version is correct, run the following:
-
-    gem install bundler
-    rbenv rehash
     brew install mysql
 
 The MySQL install command (`brew install mysql`) will output you information on how to setup MySQL to launch on login. Follow the instructions on the screen.
+
+##### Installing correct ruby version
+
+If you are using **bash** as your shell (default on OS X), then run the following commands:
+
+    echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+    . ~/.bash_profile
+
+If you are using **zsh** and **oh-my-zsh** in your shell, add `rbenv` to your list of `plugins` in `~/.zshrc` file. rbenv will be loaded automatically.
+
+Now `ruby -v` should output the correct version when you are at the root of this repository. If not, please double-check the instructions above and [file an issue](https://github.com/atk-partio/ilmomasiina/issues) and attach the steps you tried to do to make it work. If you happened to have `brew` already installed, please check that `brew doctor` error messages related to `PATH` are fixed.
+
+##### Last steps on installing dependencies
+
+Now we need to install some basic gems to get us up and running:
+
+    gem install bundler
+    rbenv rehash
+
+If you want more extra neatness, check out [Other services in use](#other-services-in-use) (scroll down this README).
+
 
 #### Installing requirements on Windows
 
@@ -62,25 +74,26 @@ The MySQL install command (`brew install mysql`) will output you information on 
 
 ### Running
 
-    rails s
-
-#### OS X & Unix
-
-Instead of running `rake` and `rails` directly, you can use the zeus gem as follows:
-
-    zeus start
-    zeus s
-    zeus rake
-
-[Zeus is a program to make your rails app boot under a second][zeus].
-
-  [zeus]: https://github.com/burke/zeus
+    rails server
 
 
 Other services in use
 ---------------------
 
+We use gems which help us develop stuff faster. They are listed below.
+
     gem install travis
     gem install heroku
     gem install git-up
+    gem install zeus
+
+For `git-up` gem, you might want to stop it automatically rebasing your current branch in order to not wreak havoc when branches have diverged.
+
     git config --global git-up.rebase.auto false
+
+[Zeus is a program to make your rails app boot under a second][zeus]. You can replace basic `rails` commands with the following ones to gain more speed.
+
+    zeus start
+    zeus server
+
+  [zeus]: https://github.com/burke/zeus
