@@ -15,14 +15,14 @@
 
 require 'spec_helper'
 
-describe Event do
+describe Event, :type => :model do
   # Required attributes
-  it { should validate_presence_of :name }
-  it { should validate_presence_of :description }
-  it { should validate_presence_of :date }
-  it { should validate_presence_of :registration_begins_at }
-  it { should validate_presence_of :registration_ends_at }
+  it { is_expected.to validate_presence_of :name }
+  it { is_expected.to validate_presence_of :description }
+  it { is_expected.to validate_presence_of :date }
+  it { is_expected.to validate_presence_of :registration_begins_at }
+  it { is_expected.to validate_presence_of :registration_ends_at }
 
   # Optional attributes
-  it { should_not validate_presence_of :image }
+  it { is_expected.not_to validate_presence_of :image }
 end

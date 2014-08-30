@@ -44,7 +44,7 @@ RSpec.configure do |config|
   config.order = "random"
 
   # Print colored output when using a tty by default
-  config.color_enabled = true
+  config.color = true
 
   # Use Capybara
   # config.include Capybara::DSL

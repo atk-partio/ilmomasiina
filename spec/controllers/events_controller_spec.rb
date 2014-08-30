@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe EventsController do
+describe EventsController, :type => :controller do
 
   describe "GET #index" do
     let(:events) do
@@ -26,7 +26,7 @@ describe EventsController do
       get :index
     end
 
-    it { should respond_with :success }
+    it { is_expected.to respond_with :success }
 
     it "retrieves all events" do
       expect(fake_event_model).to have_received(:all).with()
