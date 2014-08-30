@@ -6,7 +6,7 @@ gem 'rails', '4.1.5'
 gem 'rails-api'
 
 # Database
-gem 'pg'
+gem 'mysql'
 
 group :development, :test do
   gem 'guard'
@@ -62,7 +62,7 @@ group :development do
   gem 'better_errors', '~> 1.1'
 
   # use REPL in error pages! Whoa! Use bleeding edge to work on jruby
-  gem 'binding_of_caller', github: 'banister/binding_of_caller'
+  gem 'binding_of_caller'
 end
 
 group :test do
