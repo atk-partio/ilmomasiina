@@ -1,6 +1,10 @@
 template = require './main.hbs'
-events   = require '../events/events'
+events = require '../events/events'
+alerts = require '../common/alerts'
 
-module.exports = ($element) ->
-  $element.html do template
-  events($element.find '.events')
+module.exports = {
+  init: ($element) ->
+    $element.html do template
+    events.init $element.find('.events')
+    alerts.showIn $element.find('.alert')
+}
