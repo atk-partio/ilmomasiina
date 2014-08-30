@@ -58,7 +58,7 @@ The MySQL install command (`brew install mysql`) will output you information on 
     git clone git@github.com:atk-partio/ilmomasiina.git
     cd ilmomasiina
     bundle install
-    bundle exec rake db:create
+    bundle exec rake db:setup
 
 ### Running
 

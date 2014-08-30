@@ -4,7 +4,7 @@ rvm:
 cache: bundler
 bundler_args: --deployment
 script:
-  - RAILS_ENV=test bundle exec rake db:create db:migrate --trace
+  - RAILS_ENV=test bundle exec rake db:setup --trace
   - bundle exec rspec
 
 notifications:
