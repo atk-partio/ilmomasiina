@@ -76,6 +76,9 @@ end
 group :production do
   # More robust web server for production usage
   gem 'unicorn'
+
+  # Enable features such as static asset serving and logging on Heroku
+  gem 'rails_12factor'
 end
 
 # Extended structure for seed files
