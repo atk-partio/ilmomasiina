@@ -1,3 +1,5 @@
 var gulp = require('gulp');
 
-gulp.task('build', ['browserify', 'sass', 'images', 'index']);
+var tasks = ['browserify', 'sass', 'images', 'index']
+gulp.task('build', tasks)
+gulp.task('heroku:production', tasks)
