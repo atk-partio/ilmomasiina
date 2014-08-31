@@ -24,6 +24,7 @@
     "browserify-shim": "~3.7.0",
     "coffeeify": "~0.7.0",
     "gulp": "^3.8.7",
+    "gulp-autoprefixer": "0.0.10",
     "gulp-changed": "^0.4.1",
     "gulp-notify": "^1.4.2",
     "gulp-sass": "^0.7.1",
