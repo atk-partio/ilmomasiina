@@ -15,7 +15,7 @@
       ]
     }
   },
-  "devDependencies": {
+  "dependencies": {
     "bacon.jquery": "^0.4.9",
     "bacon.model": "^0.1.11",
     "baconjs": "^0.7.22",
@@ -36,9 +36,7 @@
     "pretty-hrtime": "~0.2.1",
     "require-dir": "^0.1.0",
     "vinyl-source-stream": "~0.1.1",
-    "watchify": "~1.0.2"
-  },
-  "dependencies": {
+    "watchify": "~1.0.2",
     "backbone": "~1.1.2",
     "jquery": "~2.1.0"
   },
