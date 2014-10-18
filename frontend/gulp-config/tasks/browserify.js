@@ -7,6 +7,7 @@
 */
 
 var browserify   = require('browserify');
+var es6ify = require('es6ify');
 var watchify     = require('watchify');
 var bundleLogger = require('../util/bundle-logger');
 var gulp         = require('gulp');
@@ -18,9 +19,9 @@ gulp.task('browserify', function() {
     // Required watchify args
     cache: {}, packageCache: {}, fullPaths: true,
     // Specify the entry point of your app
-    entries: ['./app.coffee'],
+    entries: ['./app/scripts/app.js'],
     // Add file extentions to make optional in your requires
-    extensions: ['.coffee', '.hbs'],
+    extensions: ['.js'],
     // Enable source maps!
     debug: true
   });
@@ -30,13 +31,14 @@ gulp.task('browserify', function() {
     bundleLogger.start();
 
     return bundler
+      .transform(es6ify)
       .bundle()
       // Report compile errors
       .on('error', handleErrors)
       // Use vinyl-source-stream to make the
       // stream gulp compatible. Specifiy the
       // desired output filename here.
-      .pipe(source('app.js'))
+      .pipe(source('bundle.js'))
       // Specify the output destination
       .pipe(gulp.dest('../public'))
       // Log when bundling completes!

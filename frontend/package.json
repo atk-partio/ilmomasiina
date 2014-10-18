@@ -16,13 +16,11 @@
     }
   },
   "dependencies": {
-    "bacon.jquery": "^0.4.9",
-    "bacon.model": "^0.1.11",
-    "baconjs": "^0.7.22",
+    "angular": "^1.2.23",
+    "backbone": "~1.1.2",
     "browser-sync": "~1.3.6",
     "browserify": "~5.10.1",
     "browserify-shim": "~3.7.0",
-    "coffeeify": "~0.7.0",
     "gulp": "^3.8.7",
     "gulp-autoprefixer": "0.0.10",
     "gulp-changed": "^0.4.1",
@@ -31,14 +29,14 @@
     "gulp-util": "^3.0.0",
     "handlebars": "^1.3.0",
     "hbsfy": "~2.0.0",
+    "jquery": "~2.1.0",
     "lodash": "^2.4.1",
-    "moment": "^2.8.2",
     "pretty-hrtime": "~0.2.1",
     "require-dir": "^0.1.0",
     "vinyl-source-stream": "~0.1.1",
     "watchify": "~1.0.2",
-    "backbone": "~1.1.2",
-    "jquery": "~2.1.0"
+    "es6ify": "^1.4.0",
+    "gulp-angular-templatecache": "^1.4.2"
   },
   "engines": {
     "node": "~0.10.21"
