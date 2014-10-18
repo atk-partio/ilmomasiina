@@ -2,9 +2,7 @@
   "name": "ilmomasiina-frontend",
   "browserify": {
     "transform": [
-      "browserify-shim",
-      "coffeeify",
-      "hbsfy"
+      "browserify-shim"
     ]
   },
   "browserify-shim": {
