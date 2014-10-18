@@ -4,7 +4,7 @@ var prefix = require('gulp-autoprefixer');
 var handleErrors = require('../util/handle-errors');
 
 gulp.task('sass', ['images'], function () {
-  return gulp.src('./scss/*.scss')
+  return gulp.src('./app/styles/*.scss')
     .pipe(sass())
     .pipe(prefix())
     .on('error', handleErrors)

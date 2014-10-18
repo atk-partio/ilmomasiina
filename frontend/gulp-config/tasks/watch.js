@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 
 gulp.task('watch', ['watchify', 'browserify'], function() {
-  gulp.watch('scss/**', ['sass']);
-  gulp.watch('images/**', ['images']);
+  gulp.watch('./app/styles/**', ['sass']);
+  gulp.watch('./app/images/**', ['images']);
 });
