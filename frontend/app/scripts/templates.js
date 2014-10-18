@@ -1,0 +1,3 @@
+angular.module("templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("controllers/event.html","<tabset>\n  <tab ng-repeat=\"tab in tabs\" heading=\"{{tab.title}}\" active=\"tab.active\" disabled=\"tab.disabled\">\n    {{tab.content}}\n  </tab>\n  <tab>\n    <tab-heading>\n       Alert!\n    </tab-heading>\n    I\'ve got an HTML heading, and a select callback. Pretty cool!\n  </tab>\n</tabset>");
+$templateCache.put("controllers/events-list.html","<alert ng-repeat=\"alert in alerts\" type=\"{{alert.type}}\">{{alert.msg}}</alert>");
+$templateCache.put("controllers/landing.html","<h2>Landing page!</h2>\n<p>{{ hello }}</p>");}]);

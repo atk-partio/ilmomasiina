@@ -1,8 +1,8 @@
 var gulp = require('gulp');
 var templateCache = require('gulp-angular-templatecache');
 
-gulp.task('default', function () {
-  gulp.src('scripts/**/*.html')
-    .pipe(templateCache())
-    .pipe(gulp.dest('public'));
+gulp.task('templates', function () {
+  gulp.src('./app/scripts/**/*.html')
+    .pipe(templateCache('templates.js', {standalone: true}))
+    .pipe(gulp.dest('./app/scripts'));
 });

@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = function($scope, WhatIsThis) {
+module.exports = function($scope) {
   $scope.hello = 'Hello World!'
 };
