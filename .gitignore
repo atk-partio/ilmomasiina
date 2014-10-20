@@ -29,3 +29,4 @@ public
 
 # Ignore dotenv file, used to setup environment variables in development
 .env
+frontend/app/bower_components

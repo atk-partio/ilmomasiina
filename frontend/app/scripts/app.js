@@ -1,8 +1,11 @@
 'use strict';
 
 var angular = require('angular')
-require('../vendor/angular-route.min.js')
-require('../vendor/ui-bootstrap-tpls-0.11.2.min.js')
+require('angular-route')
+require('angular-animate')
+require('angular-resource')
+
+require('../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js')
 
 // builded with https://github.com/miickel/gulp-angular-templatecache
 require('./templates')
