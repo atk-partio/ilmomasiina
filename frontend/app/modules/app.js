@@ -7,6 +7,11 @@ require('angular-animate')
 require('angular-resource')
 
 require('../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js')
+require('../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js')
+require('../bower_components/angular-i18n/angular-locale_FI.js')
+
+window.marked = require('marked')
+require('../bower_components/angular-marked/angular-marked.js')
 
 require('./common/services')
 require('./common/directives')
@@ -15,10 +20,16 @@ require('./common/directives')
 // combined by "templates" gulp task
 require('./templates')
 
-var app = angular.module('ilmomasiina', ['ngRoute', 'templates', 'ui.bootstrap', 'ilmomasiinaServices'])
+var app = angular.module('ilmomasiina',
+  ['ngRoute', 'templates', 'ui.bootstrap', 'ilmomasiinaServices', 'hc.marked']
+)
+
+app.config(['markedProvider', function(markedProvider) {
+  markedProvider.setOptions({gfm: true});
+}]);
 
 app.config(function($locationProvider, $routeProvider) {
-  $locationProvider.html5Mode(true)
+  $locationProvider.html5Mode(false)
   $routeProvider
     .otherwise({ redirectTo: '/' });
 });
