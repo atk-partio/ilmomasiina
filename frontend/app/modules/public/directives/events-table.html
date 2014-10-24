@@ -1,0 +1,23 @@
+<section ng-show="events.length">
+  <div class="panel-heading">
+    <h2 class="panel-title">{{title}}</h2>
+  </div>
+
+  <table class="table table-striped table-s hidden-xs">
+    <thead>
+      <tr>
+        <th>Ilmo</th>
+        <th style="width: 12em">Avautui</th>
+        <th style="width: 12em">Sulkeutuu</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="event in events">
+        <td><a ng-href="#/event/{{event.id}}/">{{event.name}}</a></td>
+        <td>{{ event.registration_begins_at | date:'short' }}</td>
+        <td>{{ event.registration_ends_at | date:'short' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

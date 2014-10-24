@@ -1,0 +1,15 @@
+
+<div marked="event.description"></div>
+
+
+<tabset>
+  <tab heading="Kaikki">
+    <enrollments-table questions="questions" enrollments="enrollments"></enrollments-table>
+  </tab>
+  <tab ng-repeat="quota in event.quota.quota_groups">
+    <tab-heading>
+      {{quota.name}} ({{enrollmentsByQuota[quota.id].length || 0}}/{{quota.value}})
+    </tab-heading>
+    <enrollments-table questions="questions" enrollments="enrollmentsByQuota[quota.id]"></enrollments-table>
+  </tab>
+</tabset>

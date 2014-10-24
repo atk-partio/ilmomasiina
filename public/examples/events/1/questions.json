@@ -1,0 +1,92 @@
+[
+{
+  "question": {
+    "id": 1,
+    "type": "text/name",
+    "value": "Your name",
+    "required": true
+  }
+},
+{
+  "question": {
+    "id": 2,
+    "type": "text/email",
+    "value": "Your E-mail address",
+    "required": true
+  }
+},
+{
+  "question": {
+    "id": 3,
+    "type": "text/tel",
+    "value": "Your phone number",
+    "required": false
+  }
+},
+{
+  "question": {
+    "id": 4,
+    "type": "boolean",
+    "value": "I will bring a gift"
+  }
+},
+{
+  "question": {
+    "id": 5,
+    "type": "select/many",
+    "value": "What fruits do you like?",
+    "required": false,
+    "options": [
+      {
+        "id": 1,
+        "value": "Apple"
+      },
+      {
+        "id": 2,
+        "value": "Lemon"
+      },
+      {
+        "id": 3,
+        "value": "Orange"
+      },
+      {
+        "id": 4,
+        "value": "Lime"
+      },
+      {
+        "id": 5,
+        "value": "Pineapple"
+      }
+    ]
+  }
+},
+{
+  "question": {
+    "id": 6,
+    "type": "select/one",
+    "value": "Your sex",
+    "required": true,
+    "default": 3,
+    "options": [
+      {
+        "id": 1,
+        "value": "Male"
+      },
+      {
+        "id": 2,
+        "value": "Female"
+      },
+      {
+        "id": 3,
+        "value": "I prefer not to tell"
+      }
+    ]
+  }
+},
+{
+  "question": {
+    "id": 7,
+    "type": "text/long",
+    "value": "Other questions or queries"
+  }
+}]
