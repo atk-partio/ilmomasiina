@@ -8,7 +8,7 @@ require('angular-resource')
 
 require('../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js')
 require('../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js')
-require('../bower_components/angular-i18n/angular-locale_FI.js')
+require('../bower_components/angular-i18n/angular-locale_fi.js')
 
 window.marked = require('marked')
 require('../bower_components/angular-marked/angular-marked.js')
