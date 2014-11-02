@@ -21,5 +21,6 @@ class Event < ActiveRecord::Base
   validates_presence_of :registration_ends_at
 
   has_many :questions
+  has_many :enrollments
   has_many :quota_groups
 end

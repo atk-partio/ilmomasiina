@@ -28,5 +28,6 @@ describe Event, :type => :model do
 
   # Associations
   it { is_expected.to have_many :questions }
+  it { is_expected.to have_many :enrollments }
   it { is_expected.to have_many :quota_groups }
 end

@@ -11,11 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102134256) do
+ActiveRecord::Schema.define(version: 20141102144656) do
 
   create_table "answers", force: true do |t|
     t.text     "value"
     t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "enrollment_id"
+  end
+
+  add_index "answers", ["enrollment_id"], name: "index_answers_on_enrollment_id", using: :btree
+
+  create_table "enrollments", force: true do |t|
+    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
