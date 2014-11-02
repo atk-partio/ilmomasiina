@@ -2,6 +2,8 @@
 
 var app = require('angular').module('ilmomasiina')
 
+require('./services')
+
 app.config(($routeProvider) => {
   $routeProvider
     .when('/event/:eventId', { templateUrl: 'public/event.tpl.html', controller: 'EventCtrl'})

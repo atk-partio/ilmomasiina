@@ -29,8 +29,6 @@ module.exports = ($scope, $routeParams, Event, Questions, Enrollments) => {
   }
 
   function getAnswerText(answer) {
-    console.log("answer:", answer);
-
     var matchingQuestion = _.find($scope.questions, {'id': answer.question_id});
 
     switch (matchingQuestion.type) {

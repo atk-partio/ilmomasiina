@@ -13,7 +13,6 @@ require('../bower_components/angular-i18n/angular-locale_fi.js')
 window.marked = require('marked')
 require('../bower_components/angular-marked/angular-marked.js')
 
-require('./common/services')
 require('./common/directives')
 
 // templates.js contains project's all templates
