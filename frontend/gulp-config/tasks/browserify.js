@@ -7,12 +7,13 @@
 */
 
 var browserify   = require('browserify');
-var es6ify = require('es6ify');
+var es6ify       = require('es6ify');
 var watchify     = require('watchify');
 var bundleLogger = require('../util/bundle-logger');
 var gulp         = require('gulp');
 var handleErrors = require('../util/handle-errors');
 var source       = require('vinyl-source-stream');
+var exorcist     = require('exorcist');
 
 gulp.task('browserify', function() {
   var bundler = browserify({
@@ -33,6 +34,8 @@ gulp.task('browserify', function() {
     return bundler
       .transform(es6ify)
       .bundle()
+      // Move sourcemap to separate file
+      .pipe(exorcist('../public/bundle.js.map'))
       // Report compile errors
       .on('error', handleErrors)
       // Use vinyl-source-stream to make the

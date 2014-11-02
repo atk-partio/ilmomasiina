@@ -24,6 +24,7 @@
     "browserify": "~5.10.1",
     "browserify-shim": "~3.7.0",
     "es6ify": "^1.4.0",
+    "exorcist": "^0.1.6",
     "gulp": "^3.8.7",
     "gulp-angular-templatecache": "^1.4.2",
     "gulp-autoprefixer": "0.0.10",
