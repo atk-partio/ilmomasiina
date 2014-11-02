@@ -6,4 +6,6 @@ RSpec.describe Answer, :type => :model do
 
   # Associations
   it { is_expected.to belong_to :question}
+
+  it { should serialize(:value) }
 end
