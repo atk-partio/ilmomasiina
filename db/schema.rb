@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102103037) do
+ActiveRecord::Schema.define(version: 20141102134256) do
 
   create_table "answers", force: true do |t|
     t.text     "value"
@@ -39,5 +39,12 @@ ActiveRecord::Schema.define(version: 20141102103037) do
   end
 
   add_index "questions", ["event_id"], name: "index_questions_on_event_id", using: :btree
+
+  create_table "quota_groups", force: true do |t|
+    t.string   "name"
+    t.integer  "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
