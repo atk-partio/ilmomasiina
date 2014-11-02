@@ -51,11 +51,22 @@ describe Api::EventsController, :type => :controller do
 
   describe "POST #create" do
     let(:create_new_event) { instance_double("CreateNewEvent") }
-    let(:event) { build_stubbed(:event) }
+    let(:attributes) { attributes_for(:event) }
+    let(:event) { build_stubbed(:event, attributes) }
 
     it "calls CreateNewEvent service" do
       expect(CreateNewEvent).to receive(:call) { event }
-      post :create
+      post :create, event: attributes
+    end
+
+    it do
+      is_expected.to permit(
+        :name,
+        :description,
+        :date,
+        :registration_begins_at,
+        :registration_ends_at
+      ).for(:create)
     end
 
     context "on successful save" do
@@ -63,7 +74,7 @@ describe Api::EventsController, :type => :controller do
         allow(CreateNewEvent).to receive(:new) { create_new_event }
         allow(create_new_event).to receive(:call) { event }
 
-        post :create
+        post :create, event: attributes
       end
 
       it "responds with status 201 Created" do
@@ -79,7 +90,7 @@ describe Api::EventsController, :type => :controller do
         allow(CreateNewEvent).to receive(:new) { create_new_event }
         allow(create_new_event).to receive(:call) { event }
 
-        post :create
+        post :create, event: attributes
       end
 
       it "responds with status 400 Bad Request" do
