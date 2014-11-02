@@ -25,4 +25,6 @@ describe Event, :type => :model do
 
   # Optional attributes
   it { is_expected.not_to validate_presence_of :image }
+
+  it { is_expected.to have_many :questions }
 end

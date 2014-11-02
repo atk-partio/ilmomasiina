@@ -7,4 +7,5 @@ RSpec.describe Question, :type => :model do
 
   # Associations
   it { is_expected.to belong_to :event}
+  it { is_expected.to have_many :answers }
 end

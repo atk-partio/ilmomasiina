@@ -19,4 +19,6 @@ class Event < ActiveRecord::Base
   validates_presence_of :date
   validates_presence_of :registration_begins_at
   validates_presence_of :registration_ends_at
+
+  has_many :questions
 end
