@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :answer do
-    value "MyText"
+    value  { Faker::Lorem.sentence(1).gsub(".") }
     question_id 1
   end
 end
