@@ -102,18 +102,19 @@ Nvm reads the NodeJS version from `.nvmrc`, installs the correct version, and us
     npm install
     bower install
 
-### Adding new NPM dependencies
-
-    npm install blabla --save          
-    npm shrinkwrap
-
-Shrinkwrap locks the dependency tree.
 
 ### Running the build script
 
-    gulp
+    npm run gulp
 
 The build script watches the project and compiles it to `/public` directory whenever files are changed.
+
+### Adding new NPM modules
+
+    npm install package_name --save
+    npm shrinkwrap
+
+Shrinkwrap locks the dependency tree.
 
 Other services in use
 ---------------------

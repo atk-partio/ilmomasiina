@@ -1,5 +1,9 @@
 {
   "name": "ilmomasiina-frontend",
+  "scripts": {
+    "watch": "gulp",
+    "build": "gulp build"
+  },
   "browserify": {
     "transform": [
       "browserify-shim"
