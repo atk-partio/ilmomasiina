@@ -2,19 +2,19 @@
 
 var _ = require('lodash')
 
-module.exports = ($scope, $routeParams, Event, Questions, Enrollments) => {
+module.exports = ($scope, $routeParams, $location, Event, Questions, Enrollments) => {
   Event.get({id: $routeParams.eventId}).$promise.then((result) => {
     $scope.event = result.event
   })
 
-  Questions.query($routeParams.eventId).$promise.then((result) => {
+  Questions.query({eventId: $routeParams.eventId}).$promise.then((result) => {
     $scope.questions = result
 
     loadEnrollments()
   })
 
   function loadEnrollments() {
-    Enrollments.query($routeParams.eventId).$promise.then((result) => {
+    Enrollments.query({eventId: $routeParams.eventId}).$promise.then((result) => {
       $scope.enrollments = _(result).map('enrollment').map(addAnswerTexts).value()
       
       $scope.enrollmentsByQuota = _.groupBy($scope.enrollments, 'quota_group_id')
@@ -48,5 +48,11 @@ module.exports = ($scope, $routeParams, Event, Questions, Enrollments) => {
       default:
         return "";
     }
+  }
+
+  $scope.enroll = () => {
+    //Enrollments.create().$promise.then((result) => {})
+    var enrollmentId = 1
+    $location.path($location.path() + '/enrollments/' + enrollmentId)
   }
 }

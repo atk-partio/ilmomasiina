@@ -1,0 +1,104 @@
+<h1>{{event.name}}</h1>
+
+<div class="alert alert-info ilmoinfo" ng-show="enrollment">
+  Olet järjestyksessä <strong>{{enrollments_count}}.</strong> ilmoittautunut. Edessäsi on <strong>{{unconfirmed_enrollments_count}}</strong> vahvistamatonta ilmoittautumista.
+  Ilmoittautumisaikasi oli <strong>{{enrollment.created_at | date:'mediumTime'}}</strong> ja aikaa
+  ilmoittautumisen vahvistamiseen sinulla on <strong>{{confirmationTimeLeftInMinutes}}</strong> minuuttia.
+</div>
+
+<div class="alert alert-danger validation-error" ng-show="errors">
+  Ilmoittautumisessasi on virheitä
+</div>
+
+<form role="form">
+    <div class="form-group">
+      <label for="exampleInputName" class="control-label">Nimi
+        <span style="color: #AA0000; font-size: 16px">*</span>
+      </label>
+        <input type="text" class="form-control" id="exampleInputName">
+        <span class="error help-block" style="display: none;">Tämä kenttä on pakollinen</span>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail" class="control-label">Sähköposti</label>
+      <input type="email" class="form-control" id="exampleInputEmail">
+      <span class="error help-block" style="display: none;">Täytä kelvollinen sähköpostiosoite</span>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputTel" class="control-label">Puhelinnumero</label>
+      <input type="tel" class="form-control" id="exampleInputTel">
+      <span class="error help-block" style="display: none;">Täytä kelvollinen puhelinnumero</span>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label radiolabel">Olen...</label>
+      <div class="radio radio1">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+          Athenelainen
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+          Sukulainen
+        </label>
+      </div>
+      <span class="error help-block" style="display: none;">Tämä kenttä on pakollinen</span>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputRels" class="control-label">Athenelainen: kenet tuot sukulaisinasi? Sukulaissuhteesi?</label>
+      <textarea class="form-control" rows="3" id="exampleInputRels"></textarea>
+    </div>
+
+    <!-- Joo, ei todellakaan kukaan käytä checkboxeja tähän, mutta tää onki tässä niinku esimerkkinä -->
+    <div class="form-group">
+      <label class="control-label">Ruokarajoitteet ja -allergiat</label>
+      <div class="checkbox radio1">
+        <label>
+          <input type="checkbox" name="optionsCheckboxes" id="optionsCB1" value="option1">
+          Laktoositon
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="optionsCheckboxes" id="optionsCB2" value="option1">
+          Maidoton
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="optionsCheckboxes" id="optionsCB3" value="option1">
+          Sitrusallergia
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="optionsCheckboxes" id="optionsCB4" value="option1">
+          Ei läskiä
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="optionsCheckboxes" id="optionsCB5" value="option1">
+          Ei pahaa ruokaa
+        </label>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Haluan alkoholittomat sitsijuomat
+        </label>
+      </div>
+    </div>
+  </form>
+
+  <div class="ilmobuttons">
+    <a class="btn btn-primary" id="confirm" href="masiina.php?msg=success">Vahvista ilmoittautuminen</a>
+    <a class="btn btn-default btn-sm" id="cancel" data-container="body" data-toggle="popover" data-placement="top" data-original-title="" title="">Peru illmoittautuminen</a>
+  </div>

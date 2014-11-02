@@ -1,0 +1,90 @@
+{
+  "enrollments_count": 50,
+  "unconfirmed_enrollments_count": 4,
+  "enrollment": {
+    "id": 10,
+    "created_at": "2014-11-02T14:57+0300",
+    "confirmation_expires_at": "2014-11-02T15:57+0300",
+    "event_id": 1,
+    "answers": []
+  },
+  "questions": [
+    {
+      "id": 1,
+      "type": "text/name",
+      "value": "Your name",
+      "required": true
+    },
+    {
+      "id": 2,
+      "type": "text/email",
+      "value": "Your E-mail address",
+      "required": true
+    },
+    {
+      "id": 3,
+      "type": "text/tel",
+      "value": "Your phone number",
+      "required": false
+    },
+    {
+      "id": 4,
+      "type": "boolean",
+      "value": "I will bring a gift"
+    },
+    {
+      "id": 5,
+      "type": "select/many",
+      "value": "What fruits do you like?",
+      "required": false,
+      "options": [
+        {
+          "id": 1,
+          "value": "Apple"
+        },
+        {
+          "id": 2,
+          "value": "Lemon"
+        },
+        {
+          "id": 3,
+          "value": "Orange"
+        },
+        {
+          "id": 4,
+          "value": "Lime"
+        },
+        {
+          "id": 5,
+          "value": "Pineapple"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "select/one",
+      "value": "Your sex",
+      "required": true,
+      "default": 3,
+      "options": [
+        {
+          "id": 1,
+          "value": "Male"
+        },
+        {
+          "id": 2,
+          "value": "Female"
+        },
+        {
+          "id": 3,
+          "value": "I prefer not to tell"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "text/long",
+      "value": "Other questions or queries"
+    }
+  ]
+}
