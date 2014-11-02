@@ -8,7 +8,7 @@ module.exports = ($scope, $routeParams, Event, Questions, Enrollments) => {
   })
 
   Questions.query($routeParams.eventId).$promise.then((result) => {
-    $scope.questions = _.map(result, 'question')
+    $scope.questions = result
 
     loadEnrollments()
   })
