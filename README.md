@@ -12,7 +12,7 @@ Ilmomasiina 3.0
   [dependency-badge]: https://gemnasium.com/atk-partio/ilmomasiina.png
   [dependency-url]: https://gemnasium.com/atk-partio/ilmomasiina
 
-Development
+Backend development
 -----------
 
 ### Requirements
@@ -76,6 +76,44 @@ If you want more extra neatness, check out [Other services in use](#other-servic
 
     rails server
 
+Frontend development
+---------------------
+
+Some technologies used in the frontend:
+* AngularJS 1.2.23
+* Gulp and Browserify
+* JavaScript.next (ES6) using es6ify compiler 
+
+The frontend directory is `/frontend`. Run all commands there.
+
+### Requirements
+
+#### Installing correct NodeJS version
+
+Install Node Version Manager by following the [installation instructions][https://github.com/creationix/nvm#installation]. Then run the following commands:
+
+    nvm install
+    nvm use
+
+Nvm reads the NodeJS version from `.nvmrc`, installs the correct version, and uses that version when calling NodeJS later on.
+
+#### Installing NPM and Bower dependencies
+
+    npm install
+    bower install
+
+### Adding new NPM dependencies
+
+    npm install blabla --save          
+    npm shrinkwrap
+
+Shrinkwrap locks the dependency tree.
+
+### Running the build script
+
+    gulp
+
+The build script watches the project and compiles it to `/public` directory whenever files are changed.
 
 Other services in use
 ---------------------
