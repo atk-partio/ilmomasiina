@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20141102134256) do
   create_table "quota_groups", force: true do |t|
     t.string   "name"
     t.integer  "value"
+    t.integer  "event_id"
+    t.integer  "enrollment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
