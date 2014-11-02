@@ -56,6 +56,31 @@
         "id": 51,
         "question_id": 2,
         "value": "jane.smith@example.com"
+      },
+      {
+        "id": 5,
+        "question_id": 3,
+        "value": "+234"
+      },
+      {
+        "id": 7,
+        "question_id": 4,
+        "value": false
+      },
+      {
+        "id": 8,
+        "question_id": 5,
+        "value": [2, 3]
+      },
+      {
+        "id": 12,
+        "question_id": 6,
+        "value": 2
+      },
+      {
+        "id": 14,
+        "question_id": 7,
+        "value": "Whaaat is happening?"
       }
     ]
   }
