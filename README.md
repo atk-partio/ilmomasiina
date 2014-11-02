@@ -90,7 +90,7 @@ The frontend directory is `/frontend`. Run all commands there.
 
 #### Installing correct NodeJS version
 
-Install Node Version Manager by following the [installation instructions][https://github.com/creationix/nvm#installation]. Then run the following commands:
+Install Node Version Manager by following the [installation instructions](https://github.com/creationix/nvm#installation). Then run the following commands:
 
     nvm install
     nvm use
