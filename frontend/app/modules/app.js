@@ -7,12 +7,12 @@ require('angular-animate')
 require('angular-resource')
 
 require('../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js')
-require('../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js')
 require('../bower_components/angular-i18n/angular-locale_fi.js')
 
 window.marked = require('marked')
 require('../bower_components/angular-marked/angular-marked.js')
 
+require('./common/show-form-errors.js')
 require('./common/directives')
 
 // templates.js contains project's all templates
@@ -20,7 +20,7 @@ require('./common/directives')
 require('./templates')
 
 var app = angular.module('ilmomasiina',
-  ['ngRoute', 'templates', 'ui.bootstrap', 'ilmomasiinaServices', 'hc.marked']
+  ['ngRoute', 'templates', 'ui.bootstrap', 'ilmomasiinaServices', 'hc.marked', 'ui.bootstrap.showErrors']
 )
 
 app.config(['markedProvider', function(markedProvider) {

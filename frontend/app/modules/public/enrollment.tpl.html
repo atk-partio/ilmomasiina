@@ -10,24 +10,24 @@
   Ilmoittautumisessasi on virheitä
 </div>
 
-<form role="form">
-    <div class="form-group">
+<form novalidate role="form" name="testForm">
+    <div class="form-group" show-errors>
       <label for="exampleInputName" class="control-label">Nimi
         <span style="color: #AA0000; font-size: 16px">*</span>
       </label>
-        <input type="text" class="form-control" id="exampleInputName">
+        <input type="text" name="firstName" ng-model="firstName" class="form-control" id="exampleInputName" required>
         <span class="error help-block" style="display: none;">Tämä kenttä on pakollinen</span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" show-errors>
       <label for="exampleInputEmail" class="control-label">Sähköposti</label>
-      <input type="email" class="form-control" id="exampleInputEmail">
+      <input type="email" name="email"  ng-model="email" class="form-control" id="exampleInputEmail">
       <span class="error help-block" style="display: none;">Täytä kelvollinen sähköpostiosoite</span>
     </div>
 
-    <div class="form-group">
+    <div class="form-group" show-errors>
       <label for="exampleInputTel" class="control-label">Puhelinnumero</label>
-      <input type="tel" class="form-control" id="exampleInputTel">
+      <input type="tel" name="tel"  ng-model="tel" class="form-control" id="exampleInputTel">
       <span class="error help-block" style="display: none;">Täytä kelvollinen puhelinnumero</span>
     </div>
 
