@@ -20,6 +20,9 @@
   },
   "homepage": "https://github.com/atk-partio/ilmomasiina",
   "dependencies": {
+    "6to5": "^3.4.1",
+    "6to5-core": "^3.4.1",
+    "6to5-loader": "^3.0.0",
     "webpack": "^1.5.3"
   }
 }
