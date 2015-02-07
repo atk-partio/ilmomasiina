@@ -85,3 +85,10 @@ gem 'seedbank', '~> 0.3.0'
 
 # More expressive seeding and, in particular, updating of existing seeds
 gem 'seed-fu', '~> 2.3.1'
+
+# React!
+# Use master version to get server side rendering! Use version 1.0 when released
+gem 'react-rails', github: 'reactjs/react-rails'
+
+# Use a fast, in-process, high-performance JS vm for server rendering
+gem 'therubyracer', :platforms => :ruby
