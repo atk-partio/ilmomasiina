@@ -6,6 +6,8 @@ gem 'rails', '4.1.5'
 
 gem 'rails-api'
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
 # Database
 gem 'mysql2'
 
@@ -76,7 +78,7 @@ end
 
 group :production do
   # More robust web server for production usage
-  gem 'unicorn'
+  gem 'unicorn', platforms: 'ruby'
 
   # Enable features such as static asset serving and logging on Heroku
   gem 'rails_12factor'
