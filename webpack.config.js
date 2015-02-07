@@ -37,6 +37,7 @@ var externals = {
 // @see http://webpack.github.io/docs/using-loaders.html
 var moduleLoaders = [
   { test: /\.js$/, exclude: /node_modules\//, loaders: ['6to5'] },
+  { test: /\.jsx$/, exclude: /node_modules\//, loaders: ['6to5'] },
 ];
 
 // Webpack module configuration
@@ -48,7 +49,7 @@ var webpModule = {
 var resolve = {
   root: railsJsDir,
   // @see http://webpack.github.io/docs/configuration.html#resolve-extensions
-  extensions: ['', '.js'],
+  extensions: ['', '.js', '.jsx'],
 };
 
 // Plugins for Webpack
