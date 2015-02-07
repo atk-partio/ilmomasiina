@@ -89,3 +89,7 @@ gem 'seed-fu', '~> 2.3.1'
 # React!
 # Use master version to get server side rendering! Use version 1.0 when released
 gem 'react-rails', github: 'reactjs/react-rails'
+
+# Bootstrap!
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'sass-rails', '>= 3.2'
