@@ -13,6 +13,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
+npm-debug.log
 /tmp
 
 # Sublime crud
