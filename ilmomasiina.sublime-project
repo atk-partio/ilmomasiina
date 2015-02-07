@@ -5,8 +5,13 @@
       "name": "Ilmomasiina Backend",
       "path": ".",
       "follow_symlinks": true,
-      "folder_exclude_patterns": ["tmp", ".git", "vendor", ".sass-cache"],
+      "folder_exclude_patterns": ["tmp", ".git", "vendor", ".sass-cache", "app/assets/javascripts"],
       "file_exclude_patterns": ["*.sublime-workspace", ".zeus.sock"]
+    },
+    {
+      "name": "app/assets/javascripts",
+      "path": "app/assets/javascripts",
+      "follow_symlinks": true
     },
     {
       "name": "vendor/assets",
