@@ -7,7 +7,8 @@
   },
   "scripts": {
     "watch": "webpack --watch --colors --debug --devtool eval --output-pathinfo --progress",
-    "build": "webpack --verbose"
+    "build": "webpack --verbose",
+    "hot": "webpack-dev-server --content-base app/assets --inline --hot --progress --colors --devtool eval"
   },
   "repository": {
     "type": "git",

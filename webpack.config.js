@@ -28,6 +28,8 @@ var entry = {
 var output = {
   filename: '[name].js',
   path: path.join(railsJsDir, 'bundle'),
+  // Serve webpack dev server assets properly
+  publicPath: 'http://localhost:8080/',
 };
 
 // External dependencies which are already available in the global scope

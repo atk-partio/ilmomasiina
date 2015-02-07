@@ -10,6 +10,11 @@
   <body>
     <%= yield %>
 
-    <%= javascript_include_tag "application" %>
+    <% if ENV['WEBPACK_DEV_SERVER'] %>
+      <%= javascript_include_tag "#{ENV['WEBPACK_DEV_SERVER']}/main.js" %>
+      <%= javascript_include_tag "react_ujs" %>
+    <% else %>
+      <%= javascript_include_tag "application" %>
+    <% end %>
   </body>
 </html>
