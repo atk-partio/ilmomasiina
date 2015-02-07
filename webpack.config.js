@@ -36,10 +36,18 @@ var output = {
 var externals = {
 };
 
+var jsxLoaders;
+if (NODE_ENV === 'development') {
+  jsxLoaders = ['react-hot', '6to5'];
+}
+else {
+  jsxLoaders = ['6to5'];
+}
+
 // @see http://webpack.github.io/docs/using-loaders.html
 var moduleLoaders = [
   { test: /\.js$/, exclude: /node_modules\//, loaders: ['6to5'] },
-  { test: /\.jsx$/, exclude: /node_modules\//, loaders: ['6to5'] },
+  { test: /\.jsx$/, exclude: /node_modules\//, loaders: jsxLoaders },
 ];
 
 // Webpack module configuration

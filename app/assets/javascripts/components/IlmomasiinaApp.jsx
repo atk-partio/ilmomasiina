@@ -5,7 +5,7 @@ import React from 'react';
 var IlmomasiinaApp = React.createClass({
   render() {
     var eventPres = this.props.events.map((event) => {
-      return <pre key={event.id}>{JSON.stringify(event, null, " ")}</pre>;
+      return <pre key={event.id}>{JSON.stringify(event, null, "\t")}</pre>;
     });
     return (
       <div>
