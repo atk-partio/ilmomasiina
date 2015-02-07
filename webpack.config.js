@@ -36,6 +36,7 @@ var externals = {
 
 // @see http://webpack.github.io/docs/using-loaders.html
 var moduleLoaders = [
+  { test: /\.js$/, exclude: /node_modules\//, loaders: ['6to5'] },
 ];
 
 // Webpack module configuration
