@@ -23,7 +23,11 @@ module Api
         :description,
         :date,
         :registration_begins_at,
-        :registration_ends_at)
+        :registration_ends_at,
+        questions_attributes: [
+          :name
+        ]
+      )
     end
   end
 end

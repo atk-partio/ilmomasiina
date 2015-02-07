@@ -65,7 +65,10 @@ describe Api::EventsController, :type => :controller do
         :description,
         :date,
         :registration_begins_at,
-        :registration_ends_at
+        :registration_ends_at,
+        questions_attributes: [
+          :name
+        ]
       ).for(:create)
     end
 
