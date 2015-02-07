@@ -34,3 +34,6 @@ frontend/node_modules
 
 # Ignore node modules, we use shrinkwrap to ensure versions stay in sync
 /node_modules/
+
+# Ignore bundled JS files
+app/assets/javascripts/bundle

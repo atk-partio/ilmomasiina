@@ -6,7 +6,8 @@
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "webpack --watch --colors --debug --devtool eval --output-pathinfo --progress",
+    "build": "webpack --verbose"
   },
   "repository": {
     "type": "git",
