@@ -54,8 +54,13 @@ describe Api::EventsController, :type => :controller do
     let(:attributes) { attributes_for(:event) }
     let(:event) { build_stubbed(:event, attributes) }
 
+    before do
+      allow(CreateNewEvent).to receive(:new) { create_new_event }
+      allow(create_new_event).to receive(:call) { event }
+    end
+
     it "calls CreateNewEvent service" do
-      expect(CreateNewEvent).to receive(:call) { event }
+      expect(create_new_event).to receive(:call) { event }
       post :create, event: attributes
     end
 
@@ -66,7 +71,7 @@ describe Api::EventsController, :type => :controller do
         :date,
         :registration_begins_at,
         :registration_ends_at,
-        questions_attributes: [
+        questions: [
           :name
         ]
       ).for(:create)
@@ -74,7 +79,6 @@ describe Api::EventsController, :type => :controller do
 
     context "on successful save" do
       before do
-        allow(CreateNewEvent).to receive(:new) { create_new_event }
         allow(create_new_event).to receive(:call) { event }
 
         post :create, event: attributes
@@ -86,11 +90,9 @@ describe Api::EventsController, :type => :controller do
     end
 
     context "on unsuccessful save" do
-      let(:create_new_event) { instance_double("CreateNewEvent") }
       let(:event) { Event.new }
 
       before do
-        allow(CreateNewEvent).to receive(:new) { create_new_event }
         allow(create_new_event).to receive(:call) { event }
 
         post :create, event: attributes
