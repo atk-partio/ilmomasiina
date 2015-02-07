@@ -31,3 +31,6 @@ frontend/node_modules
 
 # Ignore dotenv file, used to setup environment variables in development
 .env
+
+# Ignore node modules, we use shrinkwrap to ensure versions stay in sync
+/node_modules/

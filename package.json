@@ -1,0 +1,24 @@
+{
+  "name": "ilmomasiina",
+  "version": "0.0.1",
+  "description": "Ilmomasiina",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:atk-partio/ilmomasiina.git"
+  },
+  "author": "Informaatioverkostojen kilta Athene ry <atp@athene.fi>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atk-partio/ilmomasiina/issues"
+  },
+  "homepage": "https://github.com/atk-partio/ilmomasiina",
+  "dependencies": {
+    "webpack": "^1.5.3"
+  }
+}
