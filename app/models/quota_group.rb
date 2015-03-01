@@ -4,7 +4,7 @@
 #
 #  id            :integer          not null, primary key
 #  name          :string(255)
-#  value         :integer
+#  max_enrollees :integer
 #  event_id      :integer
 #  enrollment_id :integer
 #  created_at    :datetime
