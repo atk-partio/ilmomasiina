@@ -9,10 +9,11 @@
 #  event_id   :integer
 #
 
-class Question < ActiveRecord::Base
-  validates_presence_of :name
-  validates_presence_of :event
+# Read about factories at https://github.com/thoughtbot/factory_girl
 
-  belongs_to :event
-  has_many :answers
+FactoryGirl.define do
+  factory :question do
+    name { Faker::Lorem.sentence(1).gsub(".", "?") }
+    event
+  end
 end

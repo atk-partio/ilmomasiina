@@ -11,12 +11,11 @@
 #  updated_at    :datetime
 #
 
-require 'spec_helper'
+# Read about factories at https://github.com/thoughtbot/factory_girl
 
-RSpec.describe QuotaGroup, :type => :model do
-  # Required attributes
-  it { is_expected.to validate_presence_of :name }
-  it { is_expected.to validate_presence_of :value }
-
-  # Associations
+FactoryGirl.define do
+  factory :quota_group do
+    name "MyString"
+    value 1
+  end
 end

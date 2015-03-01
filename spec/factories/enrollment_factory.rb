@@ -8,8 +8,9 @@
 #  updated_at :datetime
 #
 
-class Enrollment < ActiveRecord::Base
-  belongs_to :event
-  has_many :answers
-  has_one :quota_group
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :enrollment do
+  end
 end

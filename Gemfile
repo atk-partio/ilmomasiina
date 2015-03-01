@@ -55,6 +55,9 @@ group :development do
   # supresses asset output in server console
   gem 'quiet_assets', '~> 1.0'
 
+  # annotates models etc. with the corresponding database schema
+  gem 'annotate'
+
   # gem for security testing
   # usage: run `brakeman` in root directory
   gem 'brakeman', '~> 2.4', require: false

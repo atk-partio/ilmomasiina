@@ -10,10 +10,11 @@
 #  enrollment_id :integer
 #
 
-class Answer < ActiveRecord::Base
-  validates_presence_of :value
-  belongs_to :question
-  belongs_to :enrollment
+# Read about factories at https://github.com/thoughtbot/factory_girl
 
-  serialize :value
+FactoryGirl.define do
+  factory :answer do
+    value  { Faker::Lorem.sentence(1).gsub(".") }
+    question_id 1
+  end
 end

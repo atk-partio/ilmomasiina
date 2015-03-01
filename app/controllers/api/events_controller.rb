@@ -7,7 +7,7 @@ module Api
 
     # POST
     def create
-      event = CreateNewEvent.call(event_params)
+      event = CreateNewEvent.new.call(event_params)
       if event.persisted?
         head :created
       else
@@ -23,7 +23,11 @@ module Api
         :description,
         :date,
         :registration_begins_at,
-        :registration_ends_at)
+        :registration_ends_at,
+        questions: [
+          :name
+        ]
+      )
     end
   end
 end
