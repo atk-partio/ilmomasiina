@@ -103,6 +103,10 @@ describe Api::EventsController, :type => :controller do
         :registration_ends_at,
         questions: [
           :name
+        ],
+        quota_groups: [
+          :name,
+          :max_enrollees
         ]
       ).for(:create)
     end

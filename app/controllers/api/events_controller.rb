@@ -32,6 +32,10 @@ module Api
         :registration_ends_at,
         questions: [
           :name
+        ],
+        quota_groups: [
+          :name,
+          :max_enrollees
         ]
       )
     end
