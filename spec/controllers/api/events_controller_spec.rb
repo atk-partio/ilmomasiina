@@ -37,14 +37,11 @@ describe Api::EventsController, :type => :controller do
     end
 
     describe "body" do
+      render_views
       subject(:output) { response.body }
 
       it "is valid JSON" do
         expect{ JSON.parse(output) }.not_to raise_error
-      end
-
-      it "contains all events" do
-        expect(output).to be_json_eql(events.to_json)
       end
     end
   end
@@ -67,14 +64,11 @@ describe Api::EventsController, :type => :controller do
     end
 
     describe "body" do
+      render_views
       subject(:output) { response.body }
 
       it "is valid JSON" do
         expect{ JSON.parse(output) }.not_to raise_error
-      end
-
-      it "contains the event" do
-        expect(output).to be_json_eql(event.to_json)
       end
     end
   end
