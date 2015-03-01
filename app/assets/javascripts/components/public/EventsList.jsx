@@ -20,7 +20,7 @@ var EventsList = React.createClass({
 
   getFilteredEventsTable(filter, title) {
     var filteredEvents = this.props.events.filter(filter);
-    return <EventsTable title={title} events={filteredEvents} />;
+    return filteredEvents.length ? <EventsTable title={title} events={filteredEvents} />: null;
   },
 
   isActiveEvent(event) {
