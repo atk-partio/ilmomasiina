@@ -1017,6 +1017,11 @@
         }
       }
     },
+    "react-bootstrap": {
+      "version": "0.16.0",
+      "from": "react-bootstrap@*",
+      "resolved": "https://registry.npmjs.org/react-bootstrap/-/react-bootstrap-0.16.0.tgz"
+    },
     "react-router": {
       "version": "0.11.6",
       "from": "react-router@0.11.6",
@@ -1050,6 +1055,11 @@
           "resolved": "https://registry.npmjs.org/native-promise-only/-/native-promise-only-0.7.6-a.tgz"
         }
       }
+    },
+    "showdown": {
+      "version": "0.4.0",
+      "from": "showdown@*",
+      "resolved": "https://registry.npmjs.org/showdown/-/showdown-0.4.0.tgz"
     },
     "webpack": {
       "version": "1.6.0",
