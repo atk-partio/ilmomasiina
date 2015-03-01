@@ -23,6 +23,7 @@ describe Event, type: :model do
     it { is_expected.to validate_presence_of :date }
     it { is_expected.to validate_presence_of :registration_begins_at }
     it { is_expected.to validate_presence_of :registration_ends_at }
+    it { is_expected.to validate_presence_of :questions }
 
     # Optional attributes
     it { is_expected.not_to validate_presence_of :image }
