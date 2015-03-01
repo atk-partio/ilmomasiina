@@ -9,6 +9,11 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 # Database
 gem 'mysql2'
 
+# Template language for generating JSON responses easily
+gem 'rabl', '~> 0.11.6'
+# MUCH faster JSON generation
+gem 'oj'
+
 group :development, :test do
   gem 'guard'
   gem 'guard-rspec', require: false

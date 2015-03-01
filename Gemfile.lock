@@ -160,6 +160,7 @@ GEM
     notiffany (0.0.4)
       nenv (~> 0.1)
       shellany (~> 0.0)
+    oj (2.11.4)
     polyglot (0.3.5)
     posix-spawn (0.3.9)
     pry (0.10.1)
@@ -191,6 +192,8 @@ GEM
       pry (>= 0.9.11)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
+    rabl (0.11.6)
+      activesupport (>= 2.3.14)
     rack (1.5.2)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -341,6 +344,7 @@ DEPENDENCIES
   hirb
   json_spec
   mysql2
+  oj
   pry
   pry-byebug
   pry-doc
@@ -349,6 +353,7 @@ DEPENDENCIES
   pry-remote
   pry-stack_explorer
   quiet_assets (~> 1.0)
+  rabl (~> 0.11.6)
   rails (= 4.1.5)
   rails_12factor
   react-rails!
