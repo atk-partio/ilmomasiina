@@ -21,6 +21,16 @@ Event.seed(:id,
     date: Time.parse("10.10.2014 18:00"),
     registration_begins_at: Time.parse("1.9.2014 12:00"),
     registration_ends_at: Time.parse("3.10.2014 23:00"),
+    questions: [
+      Question.new({
+        event_id: 1,
+        name: 'Kysymys 1'
+      }),
+      Question.new({
+        event_id: 1,
+        name: 'Kysymys 2'
+      }),
+    ]
   },
   {
     id: 2,
@@ -44,5 +54,15 @@ Event.seed(:id,
     date: Time.parse("7.1.2014 18:00"),
     registration_begins_at: Time.parse("24.12.2013 00:00"),
     registration_ends_at: Time.parse("1.1.2014 00:00"),
+    questions: [
+      Question.new({
+        event_id: 2,
+        name: 'Kysymys A'
+      }),
+      Question.new({
+        event_id: 2,
+        name: 'Kysymys B'
+      }),
+    ]
   }
 )
