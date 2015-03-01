@@ -4,11 +4,15 @@ import React from 'react';
 import EventsTable from 'components/public/EventsTable';
 
 var EventsList = React.createClass({
+  propTypes: {
+    events: React.PropTypes.array.isRequired
+  },
+
   render() {
     return (
-      <div>
-        <EventsTable />
-      </div>
+      <section>
+        <EventsTable title="Kaikki tapahtumat" events={this.props.events} />
+      </section>
     );
   }
 });
