@@ -16,6 +16,12 @@ module Api
       end
     end
 
+    # GET
+    def show
+      event = Event.find(params[:id])
+      render json: event
+    end
+
     private
 
     def event_params

@@ -49,6 +49,36 @@ describe Api::EventsController, :type => :controller do
     end
   end
 
+  describe "GET #show" do
+    let(:event_id) { '1337' }
+    let(:event) { build_stubbed(:event, name: "Event Name", id: 1337) }
+
+    before do
+      allow(Event).to receive(:find).with(event_id).and_return(event)
+
+      # Fire off the request
+      get :show, id: event_id
+    end
+
+    it { is_expected.to respond_with :success }
+
+    it "has a correct json content type header" do
+      expect(response.content_type).to eq("application/json")
+    end
+
+    describe "body" do
+      subject(:output) { response.body }
+
+      it "is valid JSON" do
+        expect{ JSON.parse(output) }.not_to raise_error
+      end
+
+      it "contains the event" do
+        expect(output).to be_json_eql(event.to_json)
+      end
+    end
+  end
+
   describe "POST #create" do
     let(:create_new_event) { instance_double("CreateNewEvent") }
     let(:attributes) { attributes_for(:event) }
