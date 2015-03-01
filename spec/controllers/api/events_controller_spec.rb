@@ -23,7 +23,7 @@ describe Api::EventsController, :type => :controller do
       # expect(Event).to receive(:all).and_return(events)
 
       # Fire off the request
-      get :index
+      get :index, format: :json
     end
 
     it { is_expected.to respond_with :success }
@@ -57,7 +57,7 @@ describe Api::EventsController, :type => :controller do
       allow(Event).to receive(:find).with(event_id).and_return(event)
 
       # Fire off the request
-      get :show, id: event_id
+      get :show, id: event_id, format: :json
     end
 
     it { is_expected.to respond_with :success }
@@ -91,7 +91,7 @@ describe Api::EventsController, :type => :controller do
 
     it "calls CreateNewEvent service" do
       expect(create_new_event).to receive(:call) { event }
-      post :create, event: attributes
+      post :create, event: attributes, format: :json
     end
 
     it do
@@ -115,7 +115,7 @@ describe Api::EventsController, :type => :controller do
       before do
         allow(create_new_event).to receive(:call) { event }
 
-        post :create, event: attributes
+        post :create, event: attributes, format: :json
       end
 
       it "responds with status 201 Created" do
@@ -129,7 +129,7 @@ describe Api::EventsController, :type => :controller do
       before do
         allow(create_new_event).to receive(:call) { event }
 
-        post :create, event: attributes
+        post :create, event: attributes, format: :json
       end
 
       it "responds with status 400 Bad Request" do

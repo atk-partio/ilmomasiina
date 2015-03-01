@@ -1,8 +1,10 @@
 module Api
   class EventsController < ApplicationController
+    respond_to :json
+
     def index
       events = Event.all
-      render json: events
+      respond_with events
     end
 
     # POST
@@ -19,7 +21,7 @@ module Api
     # GET
     def show
       event = Event.find(params[:id])
-      render json: event
+      respond_with event
     end
 
     private
