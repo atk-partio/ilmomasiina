@@ -3,8 +3,8 @@ module Api
     respond_to :json
 
     def index
-      events = Event.all
-      respond_with events
+      @events = Event.all
+      render :index
     end
 
     # POST
