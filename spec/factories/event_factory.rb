@@ -27,6 +27,7 @@ FactoryGirl.define do
     date { rand(720).days.from_now }
     registration_begins_at { date - 20.days }
     registration_ends_at { registration_begins_at + 7.days }
+    questions { FactoryGirl.build_list(:question, rand(1..4)) }
 
     trait :with_image do
       image { Faker::Internet.url + '.jpg' }
