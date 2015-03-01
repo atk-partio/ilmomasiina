@@ -76,48 +76,7 @@ If you want more extra neatness, check out [Other services in use](#other-servic
 
     rails server
 
-Frontend development
----------------------
-
-Some technologies used in the frontend:
-* AngularJS 1.2.23
-* Gulp and Browserify
-* JavaScript.next (ES6) using es6ify compiler
-
-The frontend directory is `/frontend`. Run all commands there.
-
-### Requirements
-
-#### Installing correct NodeJS version
-
-Install Node Version Manager by following the [installation instructions](https://github.com/creationix/nvm#installation). Then run the following commands:
-
-    nvm install
-    nvm use
-
-Nvm reads the NodeJS version from `.nvmrc`, installs the correct version, and uses that version when calling NodeJS later on.
-
-#### Installing NPM and Bower dependencies
-
-    npm install
-    bower install
-
-
-### Running the build script
-
-    npm run gulp
-
-The build script watches the project and compiles it to `/public` directory whenever files are changed.
-
-### Adding new NPM modules
-
-    npm install package_name --save
-    npm shrinkwrap
-
-Shrinkwrap locks the dependency tree.
-
-Other services in use
----------------------
+### Other services in use
 
 We use gems which help us develop stuff faster. They are listed below.
 
@@ -136,3 +95,49 @@ For `git-up` gem, you might want to stop it automatically rebasing your current 
     zeus server
 
   [zeus]: https://github.com/burke/zeus
+
+Frontend development
+---------------------
+
+Technologies used in the frontend:
+* Reflux, React
+* Webpack
+* ES6
+
+### Requirements
+
+#### Installing correct NodeJS version
+
+Install Node Version Manager by following the [installation instructions](https://github.com/creationix/nvm#installation). Then run the following commands:
+
+    nvm install
+    nvm use
+
+Nvm reads the NodeJS version from `.nvmrc`, installs the correct version, and uses that version when calling `node` or `npm`.
+
+#### Installing NPM dependencies
+
+    npm install
+
+
+### Running the build script
+
+    npm run watch
+
+Runs Webpack build.
+
+### Running the hot-update build script
+
+You need to run rails server with `WEBPACK_DEV_SERVER` env set:
+
+    WEBPACK_DEV_SERVER='http://localhost:8080' rails s
+    npm run hot
+
+Now your changes to JSX files are automagically hot-updated in the browser. Cool!
+
+### Adding new NPM modules
+
+    npm install package_name --save
+    npm shrinkwrap
+
+Remember to run Shrinkwrap to make sure that everyone has same exactly versions of the dependencies!
