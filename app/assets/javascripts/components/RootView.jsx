@@ -1,16 +1,13 @@
 /* jshint quotmark:false, maxlen:false */
-
 import React from 'react';
-import EventsList from 'components/public/EventsList';
-import Event from 'components/public/Event';
 import Router from 'react-router';
-
-var DefaultRoute = Router.DefaultRoute;
-var Link = Router.Link;
-var Route = Router.Route;
 var RouteHandler = Router.RouteHandler;
 
-var IlmomasiinaApp = React.createClass({
+var RootView = React.createClass({
+  propTypes: {
+    events: React.PropTypes.array.isRequired
+  },
+
   render() {
     return (
       <div>
@@ -20,10 +17,12 @@ var IlmomasiinaApp = React.createClass({
               <a className="navbar-brand" href="#">Ilmomasiina</a>
             </div>
           </div>
-        </div>        
+        </div>
 
-        <RouteHandler/>
-        
+        <article className="container-fluid">
+          <RouteHandler events={this.props.events} />
+        </article>
+
         <footer className="container-fluid">
           <p>Ilmomasiina by <a href="https://github.com/atk-partio/">ATK-Partio</a> of <a href="http://athene.fi">Athene</a></p>
         </footer>
@@ -32,15 +31,4 @@ var IlmomasiinaApp = React.createClass({
   }
 });
 
-var routes = (
-  <Route name="app" path="/" handler={IlmomasiinaApp}>
-    <Route name="event" path="event/:eventId" handler={Event} />
-    <DefaultRoute handler={EventsList} />
-  </Route>
-);
-
-Router.run(routes, function (Handler) {
-  React.render(<Handler/>, document.body);
-});
-
-export default IlmomasiinaApp;
+export default RootView;
