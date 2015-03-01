@@ -15,7 +15,7 @@
 
 FactoryGirl.define do
   factory :quota_group do
-    name "MyString"
-    value 1
+    name { Faker::Team.name }
+    max_enrollees { rand(10..100) }
   end
 end
