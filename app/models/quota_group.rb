@@ -13,5 +13,5 @@
 
 class QuotaGroup < ActiveRecord::Base
   validates_presence_of :name
-  validates_presence_of :value
+  validates_presence_of :max_enrollees
 end
