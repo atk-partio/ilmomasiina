@@ -1,5 +1,5 @@
 // Load root React component to global in order for automatic mounting to work
-import IlmomasiinaApp from 'components/public/IlmomasiinaApp';
+import IlmomasiinaApp from 'components/IlmomasiinaApp';
 window.IlmomasiinaApp = IlmomasiinaApp;
 
 // Also load React to global
