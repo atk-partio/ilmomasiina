@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-xdescribe CreateNewEvent do
+describe CreateNewEvent do
   let(:event_params) { Hash.new }
 
   context 'when saving succeeds' do
-    let(:event_double) { instance_double("Event", save: true) }
+    let(:event_double) { instance_double("Event").as_null_object }
 
     before do
       allow(Event).to receive(:new) { event_double }
@@ -21,12 +21,12 @@ xdescribe CreateNewEvent do
     end
 
     describe 'with questions attribute' do
-      let(:question_double) { instance_double("Question", save: true) }
-      let(:question_params) { attributes_for_list(:question, 2)}
+      let(:question_double) { instance_double("Question").as_null_object }
+      let(:question_params) { attributes_for_list(:question, 2) }
 
       it 'creates a new question for each question' do
         expect(Question).to receive(:new).exactly(question_params.length).times { question_double }
-        expect(question_double).to receive(:save).exactly(question_params.length).times { true }
+        expect(event_double).to receive(:questions=).with(satisfy { |a| a.length == question_params.length })
 
         CreateNewEvent.new.call(event_params.merge(questions: question_params))
       end
