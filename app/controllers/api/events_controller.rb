@@ -20,8 +20,7 @@ module Api
 
     # GET
     def show
-      event = Event.find(params[:id])
-      respond_with event
+      @event = Event.find(params[:id])
     end
 
     private
