@@ -2,6 +2,11 @@
 
 import React from 'react';
 import moment from 'moment';
+
+// Use Finnish locale with Moment
+import 'moment/locale/fi';
+moment.locale('fi');
+
 import Router from 'react-router';
 var Link = Router.Link;
 
@@ -16,8 +21,8 @@ var EventsTable = React.createClass({
       return(
         <tr>
           <td><Link to="event" params={{eventId: event.id}}>{event.name}</Link></td>
-          <td>{moment(event.registration_begins_at).format('D.M.YYYY [klo] hh:mm')}</td>
-          <td>{moment(event.registration_ends_at).format('D.M.YYYY [klo] hh:mm')}</td>
+          <td>{moment(event.registration_begins_at).format('lll')}</td>
+          <td>{moment(event.registration_ends_at).format('lll')}</td>
         </tr>
       );
     });
