@@ -17,7 +17,7 @@ Backend development
 
 ### Requirements
 
-* Ruby 2.1.2
+* Ruby 2.1.5
 * Bundler
 * JS runtime (e.g. node.js, therubyracer, JScript)
 * MySQL
@@ -26,7 +26,7 @@ Backend development
 
 Programs to be installed:
 * Homebrew
-* Ruby 2.1.2
+* Ruby 2.1.5
 * Bundler
 * MySQL
 
@@ -82,7 +82,7 @@ Frontend development
 Some technologies used in the frontend:
 * AngularJS 1.2.23
 * Gulp and Browserify
-* JavaScript.next (ES6) using es6ify compiler 
+* JavaScript.next (ES6) using es6ify compiler
 
 The frontend directory is `/frontend`. Run all commands there.
 
