@@ -1,1 +1,1 @@
-<%= react_component('IlmomasiinaApp', { events: Event.all }) %>
+<%= react_component('IlmomasiinaApp', Rabl::Renderer.json(Event.all, 'api/events/index')) %>
