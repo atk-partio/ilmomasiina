@@ -16,8 +16,8 @@ var EventsTable = React.createClass({
       return(
         <tr>
           <td><Link to="event" params={{eventId: event.id}}>{event.name}</Link></td>
-          <td>{moment(event.registration_begins_at).format('h:mm:ss a')}</td>
-          <td>{moment(event.registration_ends_at).format('h:mm:ss a')}}</td>
+          <td>{moment(event.registration_begins_at).format('D.M.YYYY [klo] hh:mm')}</td>
+          <td>{moment(event.registration_ends_at).format('D.M.YYYY [klo] hh:mm')}</td>
         </tr>
       );
     });
