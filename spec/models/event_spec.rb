@@ -15,19 +15,22 @@
 
 require 'spec_helper'
 
-describe Event, :type => :model do
-  # Required attributes
-  it { is_expected.to validate_presence_of :name }
-  it { is_expected.to validate_presence_of :description }
-  it { is_expected.to validate_presence_of :date }
-  it { is_expected.to validate_presence_of :registration_begins_at }
-  it { is_expected.to validate_presence_of :registration_ends_at }
+describe Event, type: :model do
+  context "validations" do
+    # Required attributes
+    it { is_expected.to validate_presence_of :name }
+    it { is_expected.to validate_presence_of :description }
+    it { is_expected.to validate_presence_of :date }
+    it { is_expected.to validate_presence_of :registration_begins_at }
+    it { is_expected.to validate_presence_of :registration_ends_at }
 
-  # Optional attributes
-  it { is_expected.not_to validate_presence_of :image }
+    # Optional attributes
+    it { is_expected.not_to validate_presence_of :image }
+  end
 
-  # Associations
-  it { is_expected.to have_many :questions }
-  it { is_expected.to have_many :enrollments }
-  it { is_expected.to have_many :quota_groups }
+  context "associations" do
+    it { is_expected.to have_many :questions }
+    it { is_expected.to have_many :enrollments }
+    it { is_expected.to have_many :quota_groups }
+  end
 end
