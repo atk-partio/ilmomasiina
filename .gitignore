@@ -13,6 +13,7 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*.log
+npm-debug.log
 /tmp
 
 # Sublime crud
@@ -31,3 +32,9 @@ frontend/node_modules
 
 # Ignore dotenv file, used to setup environment variables in development
 .env
+
+# Ignore node modules, we use shrinkwrap to ensure versions stay in sync
+/node_modules/
+
+# Ignore bundled JS files
+app/assets/javascripts/bundle

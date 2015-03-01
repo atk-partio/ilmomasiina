@@ -1,6 +1,4 @@
 class FrontendProxyController < ApplicationController
-  include ActionView::Layouts
-
   # Always use application layout
   layout "application"
 

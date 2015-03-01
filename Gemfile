@@ -4,8 +4,6 @@ ruby '2.1.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 
-gem 'rails-api'
-
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 # Database
@@ -57,6 +55,9 @@ group :development do
   # supresses asset output in server console
   gem 'quiet_assets', '~> 1.0'
 
+  # annotates models etc. with the corresponding database schema
+  gem 'annotate'
+
   # gem for security testing
   # usage: run `brakeman` in root directory
   gem 'brakeman', '~> 2.4', require: false
@@ -89,3 +90,11 @@ gem 'seedbank', '~> 0.3.0'
 
 # More expressive seeding and, in particular, updating of existing seeds
 gem 'seed-fu', '~> 2.3.1'
+
+# React!
+# Use master version to get server side rendering! Use version 1.0 when released
+gem 'react-rails', github: 'reactjs/react-rails'
+
+# Bootstrap!
+gem 'bootstrap-sass', '~> 3.3.3'
+gem 'sass-rails', '>= 3.2'

@@ -49,13 +49,48 @@ describe Api::EventsController, :type => :controller do
     end
   end
 
+  describe "GET #show" do
+    let(:event_id) { '1337' }
+    let(:event) { build_stubbed(:event, name: "Event Name", id: 1337) }
+
+    before do
+      allow(Event).to receive(:find).with(event_id).and_return(event)
+
+      # Fire off the request
+      get :show, id: event_id
+    end
+
+    it { is_expected.to respond_with :success }
+
+    it "has a correct json content type header" do
+      expect(response.content_type).to eq("application/json")
+    end
+
+    describe "body" do
+      subject(:output) { response.body }
+
+      it "is valid JSON" do
+        expect{ JSON.parse(output) }.not_to raise_error
+      end
+
+      it "contains the event" do
+        expect(output).to be_json_eql(event.to_json)
+      end
+    end
+  end
+
   describe "POST #create" do
     let(:create_new_event) { instance_double("CreateNewEvent") }
     let(:attributes) { attributes_for(:event) }
     let(:event) { build_stubbed(:event, attributes) }
 
+    before do
+      allow(CreateNewEvent).to receive(:new) { create_new_event }
+      allow(create_new_event).to receive(:call) { event }
+    end
+
     it "calls CreateNewEvent service" do
-      expect(CreateNewEvent).to receive(:call) { event }
+      expect(create_new_event).to receive(:call) { event }
       post :create, event: attributes
     end
 
@@ -65,13 +100,15 @@ describe Api::EventsController, :type => :controller do
         :description,
         :date,
         :registration_begins_at,
-        :registration_ends_at
+        :registration_ends_at,
+        questions: [
+          :name
+        ]
       ).for(:create)
     end
 
     context "on successful save" do
       before do
-        allow(CreateNewEvent).to receive(:new) { create_new_event }
         allow(create_new_event).to receive(:call) { event }
 
         post :create, event: attributes
@@ -83,11 +120,9 @@ describe Api::EventsController, :type => :controller do
     end
 
     context "on unsuccessful save" do
-      let(:create_new_event) { instance_double("CreateNewEvent") }
       let(:event) { Event.new }
 
       before do
-        allow(CreateNewEvent).to receive(:new) { create_new_event }
         allow(create_new_event).to receive(:call) { event }
 
         post :create, event: attributes

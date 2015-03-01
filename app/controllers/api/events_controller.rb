@@ -7,13 +7,19 @@ module Api
 
     # POST
     def create
-      event = CreateNewEvent.call(event_params)
+      event = CreateNewEvent.new.call(event_params)
       if event.persisted?
         head :created
       else
         logger.warn(event.errors.full_messages.to_sentence)
         head :bad_request
       end
+    end
+
+    # GET
+    def show
+      event = Event.find(params[:id])
+      render json: event
     end
 
     private
@@ -23,7 +29,11 @@ module Api
         :description,
         :date,
         :registration_begins_at,
-        :registration_ends_at)
+        :registration_ends_at,
+        questions: [
+          :name
+        ]
+      )
     end
   end
 end

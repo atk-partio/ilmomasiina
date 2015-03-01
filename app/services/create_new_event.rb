@@ -1,12 +1,8 @@
 class CreateNewEvent
-  include Service
-
-  def initialize(event_params = nil)
-    @event_params = event_params
-  end
-
-  def call
-    event = Event.new(@event_params)
+  def call(event_params)
+    questions_params = event_params.delete(:questions) || []
+    event = Event.new(event_params)
+    event.questions = questions_params.map { |q| Question.new(q) }
     event.save
     event
   end

@@ -11,7 +11,11 @@
 #  updated_at    :datetime
 #
 
-class QuotaGroup < ActiveRecord::Base
-  validates_presence_of :name
-  validates_presence_of :value
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :quota_group do
+    name "MyString"
+    value 1
+  end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102144656) do
+ActiveRecord::Schema.define(version: 20150301150310) do
 
   create_table "answers", force: true do |t|
     t.text     "value"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20141102144656) do
 
   create_table "quota_groups", force: true do |t|
     t.string   "name"
-    t.integer  "value"
+    t.integer  "max_enrollees"
     t.integer  "event_id"
     t.integer  "enrollment_id"
     t.datetime "created_at"

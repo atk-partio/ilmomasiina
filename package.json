@@ -1,0 +1,40 @@
+{
+  "name": "ilmomasiina",
+  "version": "0.0.1",
+  "description": "Ilmomasiina",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "watch": "webpack --watch --colors --debug --devtool eval --output-pathinfo --progress",
+    "build": "webpack --verbose",
+    "hot": "webpack-dev-server --content-base app/assets --inline --hot --progress --colors --devtool eval"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com:atk-partio/ilmomasiina.git"
+  },
+  "author": "Informaatioverkostojen kilta Athene ry <atp@athene.fi>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atk-partio/ilmomasiina/issues"
+  },
+  "homepage": "https://github.com/atk-partio/ilmomasiina",
+  "dependencies": {
+    "6to5": "^3.4.1",
+    "6to5-core": "^3.4.1",
+    "6to5-loader": "^3.0.0",
+    "moment": "^2.9.0",
+    "react": "^0.12.2",
+    "react-router": "^0.11.6",
+    "reflux": "^0.2.5",
+    "webpack": "^1.5.3"
+  },
+  "engines": {
+    "node": "0.10.31"
+  },
+  "devDependencies": {
+    "react-hot-loader": "^1.1.4",
+    "webpack-dev-server": "^1.7.0"
+  }
+}

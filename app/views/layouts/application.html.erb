@@ -5,13 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
-
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <script type="text/javascript" src="app.js"></script>
+    <%= stylesheet_link_tag "application", media: "all" %>
   </head>
   <body>
-
     <%= yield %>
 
+    <% if ENV['WEBPACK_DEV_SERVER'] %>
+      <%= javascript_include_tag "#{ENV['WEBPACK_DEV_SERVER']}/main.js" %>
+      <%= javascript_include_tag "react_ujs" %>
+    <% else %>
+      <%= javascript_include_tag "application" %>
+    <% end %>
   </body>
 </html>

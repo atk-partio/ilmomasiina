@@ -38,17 +38,17 @@
         {
           "id": 123,
           "name": "Athene",
-          "value": 20
+          "max_enrollees": 20
         },
         {
           "id": 124,
           "name": "Media",
-          "value": 40
+          "max_enrollees": 40
         },
         {
           "id": 125,
           "name": "Lurkers",
-          "value": 10
+          "max_enrollees": 10
         }
       ]
     },
@@ -72,12 +72,12 @@
         {
           "id": 123,
           "name": "Athene",
-          "value": 40
+          "max_enrollees": 40
         },
         {
           "id": 125,
           "name": "Prodeko",
-          "value": 40
+          "max_enrollees": 40
         }
       ]
     },

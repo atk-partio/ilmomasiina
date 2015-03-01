@@ -55,7 +55,7 @@ Ilmomasiina::Application.routes.draw do
   #   end
 
   namespace :api do
-    resources :events, only: [:index, :create]
+    resources :events, only: [:index, :create, :show]
   end
 
   root 'frontend_proxy#index'
