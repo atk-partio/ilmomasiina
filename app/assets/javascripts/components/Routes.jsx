@@ -11,8 +11,9 @@ var Route = Router.Route;
 
 var Routes = (
   <Route name="app" path="/" handler={RootView}>
-    <Route name="event" path="event/:eventId" handler={SingleEvent} />
-    <Route name="enroll" path="enroll/:eventId" handler={Enrollment} />
+    <Route name="event" path="event/:eventId" handler={SingleEvent}>
+      <Route name="enroll" path="enroll" handler={Enrollment} />
+    </Route>
     <DefaultRoute handler={EventsList} />
   </Route>
 );
