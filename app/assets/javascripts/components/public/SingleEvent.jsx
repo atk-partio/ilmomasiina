@@ -12,6 +12,7 @@ import Actions from 'actions/Actions';
 import _ from 'lodash';
 
 var Link = Router.Link;
+var RouteHandler = Router.RouteHandler;
 
 var SingleEvent = React.createClass({
   propTypes: {
@@ -31,25 +32,23 @@ var SingleEvent = React.createClass({
   onStoreUpdate(storeValue) { this.setState(storeValue); },
 
   render() {
-    if (!this.state || this.state.loading) { return this.getLoadingHtml(); }
-
-    var event = this.state.event;
-    if (_.isEmpty(event)) { return this.getNotFoundHtml(); }
-
-    return this.getEventHtml(event);
+    if (!this.state || this.state.loading) {
+      return this.getLoadingHtml();
+    }
+    else if (_.isEmpty(this.state.event)) {
+      return this.getNotFoundHtml();
+    }
+    else {
+      return this.getEventHtml(this.state.event);
+    }
   },
 
   getEventHtml(event) {
-    var quotaTabPanes = event.quota_groups.map(quota => {
-      return (
-        <TabPane eventKey={quota.id} tab={`${quota.name} (0 / ${quota.value}`}>
-          <EnrollmentsTable questions={event.questions} enrollments={[]}></EnrollmentsTable>
-        </TabPane>
-      );
-    });
-
     return (
       <section>
+        { /* Route handler for modals (enrollment etc) */ }
+        <RouteHandler event={this.state.event} />
+
         <img className="ilmoimage img-responsive" alt="" src={event.image} />
 
         <h1>{event.name}</h1>
@@ -62,13 +61,27 @@ var SingleEvent = React.createClass({
           </Link>
         </div>
 
-        <TabbedArea defaultActiveKey={0}>
-          <TabPane eventKey={0} tab="Kaikki">
-            <EnrollmentsTable questions={event.questions} enrollments={[]}></EnrollmentsTable>
-          </TabPane>
-          { quotaTabPanes }
-        </TabbedArea>
+        { this.getQuotasHtml(event.questions, event.quota_groups) }
       </section>
+    );
+  },
+
+  getQuotasHtml(questions, quotaGroups) {
+    var quotaTabPanes = quotaGroups.map(quota => {
+      return (
+        <TabPane eventKey={quota.id} tab={`${quota.name} (0 / ${quota.value}`}>
+          <EnrollmentsTable questions={questions} enrollments={[]}></EnrollmentsTable>
+        </TabPane>
+      );
+    });
+
+    return (
+      <TabbedArea defaultActiveKey={0}>
+        <TabPane eventKey={0} tab="Kaikki">
+          <EnrollmentsTable questions={questions} enrollments={[]}></EnrollmentsTable>
+        </TabPane>
+        { quotaTabPanes }
+      </TabbedArea>
     );
   },
 
