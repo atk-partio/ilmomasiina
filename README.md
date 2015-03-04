@@ -140,4 +140,8 @@ Now your changes to JSX files are automagically hot-updated in the browser. Cool
     npm install package_name --save
     npm shrinkwrap
 
-Remember to run Shrinkwrap to make sure that everyone has same exactly versions of the dependencies!
+Remember to run Shrinkwrap to make sure that everyone has exactly the same versions of the dependencies!
+
+### Toggle between API and example data
+
+Hacky, temporary solution: change `useExampleData` boolean value in  `app/assets/javascripts/utils/API.js`. When API is ready enough we don't need this anymore ;)
