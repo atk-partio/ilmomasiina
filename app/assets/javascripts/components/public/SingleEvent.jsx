@@ -39,11 +39,11 @@ var SingleEvent = React.createClass({
       return this.getNotFoundHtml();
     }
     else {
-      return this.getEventHtml(this.state.event);
+      return this.getEventHtml(this.state.event, this.state.enrollments);
     }
   },
 
-  getEventHtml(event) {
+  getEventHtml(event, enrollments) {
     return (
       <section>
         { /* Route handler for modals (enrollment etc) */ }
@@ -61,16 +61,20 @@ var SingleEvent = React.createClass({
           </Link>
         </div>
 
-        { this.getQuotasHtml(event.questions, event.quota_groups) }
+        { this.getQuotasHtml(event.questions, event.quota_groups, enrollments) }
       </section>
     );
   },
 
-  getQuotasHtml(questions, quotaGroups) {
+  getQuotasHtml(questions, quotaGroups, enrollments) {
+    var enrollmentsByQuota = _.groupBy(enrollments, 'quota_group_id');
+
     var quotaTabPanes = quotaGroups.map(quota => {
+      var quotaEnrollments = enrollmentsByQuota[quota.id] || [];
+      var quotaSize = quotaEnrollments.length;
       return (
-        <TabPane eventKey={quota.id} tab={`${quota.name} (0 / ${quota.value}`}>
-          <EnrollmentsTable questions={questions} enrollments={[]}></EnrollmentsTable>
+        <TabPane eventKey={quota.id} tab={`${quota.name} (${quotaSize} / ${quota.value})`}>
+          <EnrollmentsTable questions={questions} enrollments={quotaEnrollments}></EnrollmentsTable>
         </TabPane>
       );
     });
@@ -78,12 +82,13 @@ var SingleEvent = React.createClass({
     return (
       <TabbedArea defaultActiveKey={0}>
         <TabPane eventKey={0} tab="Kaikki">
-          <EnrollmentsTable questions={questions} enrollments={[]}></EnrollmentsTable>
+          <EnrollmentsTable questions={questions} enrollments={enrollments}></EnrollmentsTable>
         </TabPane>
         { quotaTabPanes }
       </TabbedArea>
     );
   },
+
 
   getLoadingHtml() {
     // Show event image and name using the preloaded event data

@@ -28,12 +28,24 @@ var Enrollment = React.createClass({
               <Bootstrap.Alert bsStyle="warning">
                 Ilmoittautumisessasi on virheitä.
               </Bootstrap.Alert>
+
+              { this.getFormHTML() }
             </div>
             <div className="modal-footer">
               <Bootstrap.Button>Peruuta</Bootstrap.Button>
               <Bootstrap.Button bsStyle="primary" onClick={this.enroll}>Ilmoittaudu</Bootstrap.Button>
             </div>
           </Bootstrap.Modal>
+      );
+    },
+
+    getFormHTML() {
+      return(
+        <form className="form-horizontal">
+          <Bootstrap.Input type="text" label="Text" labelClassName="col-xs-2" wrapperClassName="col-xs-10" />
+          <Bootstrap.Input type="textarea" label="Textarea" labelClassName="col-xs-2" wrapperClassName="col-xs-10" />
+          <Bootstrap.Input type="checkbox" label="Checkbox" wrapperClassName="col-xs-offset-2 col-xs-10" help="Offset is applied to wrapper." />
+        </form>
       );
     },
 
