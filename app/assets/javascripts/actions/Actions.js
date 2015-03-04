@@ -1,5 +1,4 @@
 import Reflux from 'reflux';
-import request from 'superagent';
 import API from 'utils/API';
 
 var Actions = Reflux.createActions({
@@ -7,7 +6,9 @@ var Actions = Reflux.createActions({
 });
 
 Actions.loadEvent.listen((eventId) => {
-    Actions.loadEvent.promise( API.loadEvent(eventId) );
+    Actions.loadEvent.promise(
+      Promise.all([API.loadEvent(eventId), API.loadEnrollments(eventId)])
+    );
 });
 
 export default Actions;

@@ -9,8 +9,8 @@ var SingleEventStore = Reflux.createStore({
         this.updateState({loading: true});
       });
 
-      this.listenTo(Actions.loadEvent.completed, (event) => {
-        this.updateState({loading: false, event: event});
+      this.listenTo(Actions.loadEvent.completed, (result) => {
+        this.updateState({loading: false, event: result[0], enrollments: result[1]});
       });
 
       this.listenTo(Actions.loadEvent.failed, (error) => {
