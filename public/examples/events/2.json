@@ -1,14 +1,105 @@
 {
-  "event": {
-    "id": 5,
-    "name": "Party hard!",
-    "description": "We're gonna **party** like no tomorrow!",
-    "image": "http://www.example.com/dolan.jpg",
-    "quota": {
-      "common_quota_value": 200
+  "id": 5,
+  "name": "Party hard!",
+  "description": "We're gonna **party** like no tomorrow!",
+  "image": "http://www.example.com/dolan.jpg",
+  "quota_groups": [
+    {
+      "id": 123,
+      "name": "Athene",
+      "value": 20
     },
-    "date": "2014-05-20",
-    "registration_begins_at": "2014-05-01T12:00+0300",
-    "registration_ends_at": "2014-05-19T23:59+0300"
-  }
+    {
+      "id": 124,
+      "name": "Media",
+      "value": 40
+    },
+    {
+      "id": 125,
+      "name": "Lurkers",
+      "value": 10
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "type": "text/name",
+      "value": "Your name",
+      "required": true
+    },
+    {
+      "id": 2,
+      "type": "text/email",
+      "value": "Your E-mail address",
+      "required": true
+    },
+    {
+      "id": 3,
+      "type": "text/tel",
+      "value": "Your phone number",
+      "required": false
+    },
+    {
+      "id": 4,
+      "type": "boolean",
+      "value": "I will bring a gift"
+    },
+    {
+      "id": 5,
+      "type": "select/many",
+      "value": "What fruits do you like?",
+      "required": false,
+      "options": [
+        {
+          "id": 1,
+          "value": "Apple"
+        },
+        {
+          "id": 2,
+          "value": "Lemon"
+        },
+        {
+          "id": 3,
+          "value": "Orange"
+        },
+        {
+          "id": 4,
+          "value": "Lime"
+        },
+        {
+          "id": 5,
+          "value": "Pineapple"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "select/one",
+      "value": "Your sex",
+      "required": true,
+      "default": 3,
+      "options": [
+        {
+          "id": 1,
+          "value": "Male"
+        },
+        {
+          "id": 2,
+          "value": "Female"
+        },
+        {
+          "id": 3,
+          "value": "I prefer not to tell"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "text/long",
+      "value": "Other questions or queries"
+    }
+  ],
+  "date": "2014-05-20",
+  "registration_begins_at": "2014-05-01T12:00+0300",
+  "registration_ends_at": "2014-05-19T23:59+0300"
 }
