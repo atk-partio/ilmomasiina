@@ -5,7 +5,7 @@ var realEndpoints = {
     return {url: `/api/events/${eventId}`, method: `get`};
   },
   'getEnrollments': (eventId) => {
-    return {url: `/api/events/${eventId}`, method: `get`};
+    return {url: `/api/events/${eventId}/enrollments`, method: `get`};
   },
   'createEnrollment': (eventId) => {
     return {url: `/api/events/${eventId}/enrollments`, method: `put`};

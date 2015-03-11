@@ -77,7 +77,7 @@ var SingleEvent = React.createClass({
     });
 
     return (
-      <TabbedArea defaultActiveKey={0}>
+      <TabbedArea defaultActiveKey={0} animation={false}>
         <TabPane eventKey={0} tab="Kaikki">
           <EnrollmentsTable questions={questions} enrollments={enrollments}></EnrollmentsTable>
         </TabPane>
