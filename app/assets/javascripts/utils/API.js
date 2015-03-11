@@ -1,7 +1,5 @@
 import request from 'superagent';
 
-var useExampleData = true;
-
 var realEndpoints = {
   'getEvent': (eventId) => {
     return {url: `/api/events/${eventId}`, method: `get`};
@@ -21,7 +19,7 @@ var mockedEndpoints = {
   'createEnrollment': (eventId) => wrapMock(`/examples/events/${eventId}/enrollment/put.json`)
 };
 
-var endpoints = useExampleData ? exampleEndpoints : realEndpoints;
+var endpoints = window.location.href.indexOf('?mockapi') > 0 ? mockedEndpoints : realEndpoints;
 
 function promiseRequest(endpoint) {
   return new Promise((resolve, reject) => {
