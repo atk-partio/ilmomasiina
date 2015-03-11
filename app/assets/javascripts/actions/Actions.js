@@ -2,12 +2,20 @@ import Reflux from 'reflux';
 import API from 'utils/API';
 
 var Actions = Reflux.createActions({
-    'loadEvent': { asyncResult: true }
+    'getEventAndEnrollments': { asyncResult: true },
+    'createEnrollment': { asyncResult: true },
+    'setEnrollmentAnswers': {}
 });
 
-Actions.loadEvent.listen((eventId) => {
-    Actions.loadEvent.promise(
-      Promise.all([API.loadEvent(eventId), API.loadEnrollments(eventId)])
+Actions.getEventAndEnrollments.listen((eventId) => {
+    Actions.getEventAndEnrollments.promise(
+      Promise.all([API.getEvent(eventId), API.getEnrollments(eventId)])
+    );
+});
+
+Actions.createEnrollment.listen((eventId) => {
+    Actions.createEnrollment.promise(
+      Promise.all(API.createEnrollment(eventId))
     );
 });
 

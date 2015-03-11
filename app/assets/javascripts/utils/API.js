@@ -3,43 +3,43 @@ import request from 'superagent';
 var useExampleData = true;
 
 var realEndpoints = {
-  'getEvent': (eventId) => `/api/events/${eventId}`,
-  'getEnrollments': (eventId) => `/api/events/${eventId}/enrollments`
+  'getEvent': (eventId) => {
+    return {url: `/api/events/${eventId}`, method: `get`};
+  },
+  'getEnrollments': (eventId) => {
+    return {url: `/api/events/${eventId}`, method: `get`};
+  },
+  'createEnrollment': (eventId) => {
+    return {url: `/api/events/${eventId}/enrollments`, method: `put`};
+  }
 };
 
-var exampleEndpoints = {
-  'getEvent': (eventId) => `/examples/events/${eventId}.json`,
-  'getEnrollments': (eventId) => `/examples/events/${eventId}/enrollments.json`
+function wrapMock(url) { return {url: url, method: 'get'}; }
+var mockedEndpoints = {
+  'getEvent': (eventId) => wrapMock(`/examples/events/${eventId}.json`),
+  'getEnrollments': (eventId) => wrapMock(`/examples/events/${eventId}/enrollments.json`),
+  'createEnrollment': (eventId) => wrapMock(`/examples/events/${eventId}/enrollment/put.json`)
 };
 
 var endpoints = useExampleData ? exampleEndpoints : realEndpoints;
 
-var API = {
-  loadEvent(eventId) {
-    return new Promise((resolve, reject) => {
-      request.get(endpoints.getEvent(eventId), function(res) {
-        if (res.ok) {
-          resolve(res.body);
-        }
-        else {
-          reject(res.error);
-        }
-      });
+function promiseRequest(endpoint) {
+  return new Promise((resolve, reject) => {
+    request[endpoint.method](endpoint.url, function(res) {
+      if (res.ok) {
+        resolve(res.body);
+      }
+      else {
+        reject(res.error);
+      }
     });
-  },
+  });
+}
 
-  loadEnrollments(eventId) {
-    return new Promise((resolve, reject) => {
-      request.get(endpoints.getEnrollments(eventId), function(res) {
-        if (res.ok) {
-          resolve(res.body);
-        }
-        else {
-          reject(res.error);
-        }
-      });
-    });
-  }
+var API = {
+  getEvent: (eventId) => promiseRequest(endpoints.getEvent(eventId)),
+  getEnrollments: (eventId) => promiseRequest(endpoints.getEnrollments(eventId)),
+  createEnrollment: (eventId) => promiseRequest(endpoints.createEnrollment(eventId))
 };
 
 export default API;

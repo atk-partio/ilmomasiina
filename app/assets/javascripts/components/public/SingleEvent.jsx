@@ -25,9 +25,9 @@ var SingleEvent = React.createClass({
     Router.State
   ],
 
-  componentWillMount() { this.loadEvent(); },
-  componentWillReceiveProps() { this.loadEvent(); },
-  loadEvent() { Actions.loadEvent(this.getEventId()); },
+  componentWillMount() { this.loadEventAndEnrollments(); },
+  componentWillReceiveProps() { this.loadEventAndEnrollments(); },
+  loadEventAndEnrollments() { Actions.getEventAndEnrollments(this.getEventId()); },
 
   onStoreUpdate(storeValue) { this.setState(storeValue); },
 
