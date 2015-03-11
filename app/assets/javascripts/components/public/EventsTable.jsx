@@ -2,6 +2,7 @@
 
 import React from 'react';
 import moment from 'moment';
+import Bootstrap from 'react-bootstrap';
 
 // Use Finnish locale with Moment
 import 'moment/locale/fi';
@@ -28,11 +29,8 @@ var EventsTable = React.createClass({
     });
 
     return (
-      <div className="panel panel-default events-panel">
-        <div className="panel-heading">
-          <h2 className="panel-title">{this.props.title}</h2>
-        </div>
-        <table className="table table-striped table-s hidden-xs">
+      <Bootstrap.Panel header={<h2 >{this.props.title}</h2>}>
+        <Bootstrap.Table fill striped hover responsive>
           <thead>
             <tr>
               <th>Ilmo</th>
@@ -44,8 +42,8 @@ var EventsTable = React.createClass({
           <tbody>
             {eventRows}
           </tbody>
-        </table>
-      </div>
+        </Bootstrap.Table>
+      </Bootstrap.Panel>
     );
   }
 });

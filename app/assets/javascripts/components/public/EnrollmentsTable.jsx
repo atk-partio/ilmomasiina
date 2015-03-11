@@ -2,6 +2,7 @@
 
 import React from 'react';
 import _ from 'lodash';
+import Bootstrap from 'react-bootstrap';
 
 var EnrollmentsTable = React.createClass({
   propTypes: {
@@ -10,17 +11,17 @@ var EnrollmentsTable = React.createClass({
   },
 
   render() {
-    if (this.props.enrollments.length > 0) {
+    if (this.props.enrollments && this.props.enrollments.length > 0) {
       return (
         <section>
-          <table className="table table-striped table-s hidden-xs">
+          <Bootstrap.Table striped condensed hover responsive>
             <thead>
               { this.getQuestionRowsHTML() }
             </thead>
             <tbody>
               { this.getAnswerRowsHTML() }
             </tbody>
-          </table>
+          </Bootstrap.Table>
         </section>
       );
     }

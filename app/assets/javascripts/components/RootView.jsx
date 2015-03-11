@@ -1,6 +1,7 @@
 /* jshint quotmark:false, maxlen:false */
 import React from 'react';
 import Router from 'react-router';
+import Bootstrap from 'react-bootstrap';
 var RouteHandler = Router.RouteHandler;
 
 var RootView = React.createClass({
@@ -11,13 +12,7 @@ var RootView = React.createClass({
   render() {
     return (
       <div>
-         <div className="navbar navbar-inverse" role="navigation">
-          <div className="container-fluid">
-            <div className="navbar-header">
-              <a className="navbar-brand" href="#">Ilmomasiina</a>
-            </div>
-          </div>
-        </div>
+        <Bootstrap.Navbar fluid brand={<Router.Link to="/">Ilmomasiina</Router.Link>} inverse />
 
         <article className="container-fluid">
           <RouteHandler events={this.props.events} />
