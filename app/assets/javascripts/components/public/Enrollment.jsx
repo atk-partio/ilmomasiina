@@ -11,23 +11,13 @@ var Enrollment = React.createClass({
 
   render() {
       var event = this.props.event;
-      var enrollment = {created_at: 0};
-      var enrollmentsCount = 0;
-      var unconfirmedEnrollmentsCount = 0;
-      var confirmationTimeLeftInMinutes = 0;
 
       return (
           <Bootstrap.Modal {...this.props} title={`Ilmoittautuminen tapahtumaan ${event.name}`} bsStyle="primary" animation={true} onRequestHide={_.noop} >
             <div className="modal-body">
-              <Bootstrap.Alert bsStyle="info">
-                Olet järjestyksessä <strong>{enrollmentsCount}.</strong> ilmoittautunut. Edessäsi on <strong>{unconfirmedEnrollmentsCount}</strong> vahvistamatonta ilmoittautumista.
-                Ilmoittautumisaikasi oli <strong>{enrollment.created_at}</strong> ja aikaa
-                ilmoittautumisen vahvistamiseen sinulla on <strong>{confirmationTimeLeftInMinutes}</strong> minuuttia.
-              </Bootstrap.Alert>
+              { this.getStatusHTML() }
 
-              <Bootstrap.Alert bsStyle="warning">
-                Ilmoittautumisessasi on virheitä.
-              </Bootstrap.Alert>
+              { this.getErrorsHTML() }
 
               { this.getFormHTML() }
             </div>
@@ -37,6 +27,35 @@ var Enrollment = React.createClass({
             </div>
           </Bootstrap.Modal>
       );
+    },
+
+    getStatusHTML() {
+      var enrollment = {created_at: 0};
+
+      var enrollmentsCount = 0;
+      var unconfirmedEnrollmentsCount = 0;
+      var confirmationTimeLeftInMinutes = 0;
+
+      return (
+        <Bootstrap.Alert bsStyle="info">
+          Olet järjestyksessä <strong>{enrollmentsCount}.</strong> ilmoittautunut. Edessäsi on <strong>{unconfirmedEnrollmentsCount}</strong> vahvistamatonta ilmoittautumista.
+          Ilmoittautumisaikasi oli <strong>{enrollment.created_at}</strong> ja aikaa
+          ilmoittautumisen vahvistamiseen sinulla on <strong>{confirmationTimeLeftInMinutes}</strong> minuuttia.
+        </Bootstrap.Alert>
+      );
+    },
+
+    getErrorsHTML() {
+      var errors = this.props.event.errors || [];
+
+
+      if (errors.length > 0) {
+        return (
+          <Bootstrap.Alert bsStyle="warning">
+            { errors.map}
+          </Bootstrap.Alert>
+        );
+      }
     },
 
     getFormHTML() {

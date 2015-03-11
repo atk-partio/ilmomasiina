@@ -11,9 +11,6 @@ import SingleEventStore from 'stores/SingleEventStore';
 import Actions from 'actions/Actions';
 import _ from 'lodash';
 
-var Link = Router.Link;
-var RouteHandler = Router.RouteHandler;
-
 var SingleEvent = React.createClass({
   propTypes: {
     // Events prop used only in getLoadingHtml
@@ -29,7 +26,7 @@ var SingleEvent = React.createClass({
   componentWillReceiveProps() { this.loadEventAndEnrollments(); },
   loadEventAndEnrollments() { Actions.getEventAndEnrollments(this.getEventId()); },
 
-  onStoreUpdate(storeValue) { this.setState(storeValue); },
+  onStoreUpdate(storeValue) { this.replaceState(storeValue); },
 
   render() {
     if (!this.state || this.state.loading) {
@@ -47,7 +44,7 @@ var SingleEvent = React.createClass({
     return (
       <section>
         { /* Route handler for modals (enrollment etc) */ }
-        <RouteHandler event={this.state.event} />
+        <Router.RouteHandler event={this.state.event} />
 
         <img className="ilmoimage img-responsive" alt="" src={event.image} />
 
@@ -56,9 +53,9 @@ var SingleEvent = React.createClass({
         <div dangerouslySetInnerHTML={{__html: marked(event.description || "")}} />
 
         <div className="event-enroll">
-          <Link to="enroll" params={{eventId: event.id}} className="btn btn-primary">
+          <Router.Link to="enroll" params={{eventId: event.id}} className="btn btn-primary">
             Ilmoittaudu
-          </Link>
+          </Router.Link>
         </div>
 
         { this.getQuotasHtml(event.questions, event.quota_groups, enrollments) }
@@ -93,7 +90,7 @@ var SingleEvent = React.createClass({
   getLoadingHtml() {
     // Show event image and name using the preloaded event data
     var eventId = this.getEventId();
-    var event = this.props.events.filter((event) => { return event.id === eventId; })[0];
+    var event = this.props.events.filter((event) => event.id === eventId)[0];
 
     return(
       <section>
